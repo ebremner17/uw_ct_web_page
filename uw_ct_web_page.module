@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the uWaterloo Content Type Web Page feature.
+ */
+
+include_once('uw_ct_web_page.features.inc');
