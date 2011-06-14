@@ -228,87 +228,9 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_page_banner'
-  $fields['node-uw_web_page-field_page_banner'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_page_banner',
-      'foreign keys' => array(
-        'nid' => array(
-          'columns' => array(
-            'nid' => 'nid',
-          ),
-          'table' => 'node',
-        ),
-      ),
-      'indexes' => array(
-        'nid' => array(
-          0 => 'nid',
-        ),
-      ),
-      'module' => 'node_reference',
-      'settings' => array(
-        'referenceable_types' => array(
-          'article' => 0,
-          'page' => 0,
-          'uw_fdsu_banner' => 'uw_fdsu_banner',
-          'uw_web_page' => 0,
-        ),
-        'view' => array(
-          'args' => array(
-            0 => '',
-          ),
-          'display_name' => '',
-          'view_name' => '',
-        ),
-      ),
-      'translatable' => '1',
-      'type' => 'node_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'uw_web_page',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'Select a banner to appear at the top of the page.  Selecting multiple banners will randomly display one banner when the page is visited.',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '0',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_page_banner',
-      'label' => 'Banner',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '1',
-      ),
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
-  t('Banner');
   t('Body');
-  t('Select a banner to appear at the top of the page.  Selecting multiple banners will randomly display one banner when the page is visited.');
   t('Upload files');
   t('Upload images');
 
