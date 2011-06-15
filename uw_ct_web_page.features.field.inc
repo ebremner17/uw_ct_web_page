@@ -146,6 +146,12 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'insert_default' => array(
+            0 => 'auto',
+          ),
+          'insert_styles' => array(	
+            0 => 'auto',
+          ),          
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -219,6 +225,11 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
+          'insert' => 1,
+          'insert_default' => 'auto',
+          'insert_styles' => array(
+            'auto' => 'auto',
+          ),          
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
