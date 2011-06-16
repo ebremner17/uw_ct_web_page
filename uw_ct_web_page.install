@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Implementation of hook_install()
+ */
+
+function uw_ct_web_page_install() {
+// Insert default pre-defined RDF mapping into the database.
+  $rdf_mappings = array(
+    array(
+      'type' => 'node',
+      'bundle' => 'uw_web_page',
+      'mapping' => array(
+        'rdftype' => array('foaf:Document'),
+      ),
+    ),
+  );
+  foreach ($rdf_mappings as $rdf_mapping) {
+    rdf_mapping_save($rdf_mapping);
+  }
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function uw_ct_web_page_uninstall() {
+  
+  // TODO: Add uninstall code
+}
