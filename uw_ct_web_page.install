@@ -26,6 +26,6 @@ function uw_ct_web_page_install() {
  * Implements hook_uninstall().
  */
 function uw_ct_web_page_uninstall() {
-  
-  // TODO: Add uninstall code
+  // Remove the RDF mapping from the database
+  rdf_mapping_delete('node', 'uw_web_page');
 }
