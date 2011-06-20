@@ -67,7 +67,7 @@ function uw_ct_web_page_strongarm() {
     0 => 'main-menu',
     1 => 'menu-site-footer',
   );
-  $export['menu_options_test'] = $strongarm; 
+  $export['menu_options_uw_web_page'] = $strongarm; 
 
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
