@@ -122,7 +122,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => 3,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -146,12 +146,15 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'insert' => 0,
+          'insert_class' => '',
           'insert_default' => array(
             0 => 'auto',
           ),
-          'insert_styles' => array(	
+          'insert_styles' => array(
             0 => 'auto',
-          ),          
+          ),
+          'insert_width' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -226,10 +229,12 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'image',
         'settings' => array(
           'insert' => 1,
+          'insert_class' => '',
           'insert_default' => 'auto',
           'insert_styles' => array(
             'auto' => 'auto',
-          ),          
+          ),
+          'insert_width' => '',
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
@@ -239,9 +244,75 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-uw_web_page-field_sidebar_content'
+  $fields['node-uw_web_page-field_sidebar_content'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidebar_content',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '1',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_sidebar_content',
+      'label' => 'Sidebar',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '10',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Sidebar');
   t('Upload files');
   t('Upload images');
 
