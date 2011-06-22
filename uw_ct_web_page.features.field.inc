@@ -167,7 +167,7 @@ function uw_ct_web_page_field_default_fields() {
   $fields['node-uw_web_page-field_image'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
@@ -230,9 +230,18 @@ function uw_ct_web_page_field_default_fields() {
         'settings' => array(
           'insert' => 1,
           'insert_class' => '',
-          'insert_default' => 'auto',
+          'insert_default' => 'image',
           'insert_styles' => array(
-            'auto' => 'auto',
+            'auto' => 0,
+            'image' => 'image',
+            'image_220-width' => 'image_220-width',
+            'image_480-width' => 'image_480-width',
+            'image_720-width' => 'image_720-width',
+            'image_banner_740w' => 0,
+            'image_large' => 0,
+            'image_medium' => 0,
+            'image_thumbnail' => 0,
+            'link' => 0,
           ),
           'insert_width' => '',
           'preview_image_style' => 'thumbnail',
