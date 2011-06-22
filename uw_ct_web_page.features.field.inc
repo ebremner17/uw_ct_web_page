@@ -229,7 +229,7 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'image',
         'settings' => array(
           'insert' => 1,
-          'insert_class' => '',
+          'insert_class' => 'standalone-image',
           'insert_default' => 'image',
           'insert_styles' => array(
             'auto' => 0,
