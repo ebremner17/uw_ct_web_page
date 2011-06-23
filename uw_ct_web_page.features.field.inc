@@ -167,7 +167,7 @@ function uw_ct_web_page_field_default_fields() {
   $fields['node-uw_web_page-field_image'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
@@ -229,7 +229,7 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'image',
         'settings' => array(
           'insert' => 1,
-          'insert_class' => 'standalone-image',
+          'insert_class' => '',
           'insert_default' => 'image',
           'insert_styles' => array(
             'auto' => 0,
