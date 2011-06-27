@@ -10,11 +10,11 @@
 function uw_ct_web_page_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
-    return array("version" => 3);
+    return array("version" => "3");
   }
   list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
-    return array("version" => 1);
+    return array("version" => "1");
   }
 }
 
@@ -24,7 +24,7 @@ function uw_ct_web_page_ctools_plugin_api() {
 function uw_ct_web_page_views_api() {
   list($module, $api) = func_get_args();
   if ($module == "views" && $api == "views_default") {
-    return array("version" => 3.0);
+    return array("version" => "3.0");
   }
 }
 
@@ -34,9 +34,9 @@ function uw_ct_web_page_views_api() {
 function uw_ct_web_page_image_default_styles() {
   $styles = array();
 
-  // Exported image style: 220-width
-  $styles['220-width'] = array(
-    'name' => '220-width',
+  // Exported image style: 230-width
+  $styles['230-width'] = array(
+    'name' => '230-width',
     'effects' => array(
       4 => array(
         'label' => 'Scale',
@@ -47,7 +47,7 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '220',
+          'width' => '230',
           'height' => '',
           'upscale' => 1,
         ),
@@ -56,9 +56,9 @@ function uw_ct_web_page_image_default_styles() {
     ),
   );
 
-  // Exported image style: 480-width
-  $styles['480-width'] = array(
-    'name' => '480-width',
+  // Exported image style: 500-width
+  $styles['500-width'] = array(
+    'name' => '500-width',
     'effects' => array(
       3 => array(
         'label' => 'Scale',
@@ -69,7 +69,7 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '480',
+          'width' => '500',
           'height' => '',
           'upscale' => 1,
         ),
@@ -78,11 +78,11 @@ function uw_ct_web_page_image_default_styles() {
     ),
   );
 
-  // Exported image style: 720-width
-  $styles['720-width'] = array(
-    'name' => '720-width',
+  // Exported image style: 760-width
+  $styles['760-width'] = array(
+    'name' => '760-width',
     'effects' => array(
-      2 => array(
+      1 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -91,7 +91,7 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '720',
+          'width' => '760',
           'height' => '',
           'upscale' => 1,
         ),
