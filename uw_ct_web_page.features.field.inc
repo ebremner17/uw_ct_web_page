@@ -77,7 +77,7 @@ function uw_ct_web_page_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '1',
       ),
     ),
   );
@@ -158,7 +158,7 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '5',
+        'weight' => '3',
       ),
     ),
   );
@@ -234,14 +234,12 @@ function uw_ct_web_page_field_default_fields() {
           'insert_styles' => array(
             'auto' => 0,
             'image' => 'image',
-            'image_220-width' => 0,
-            'image_230-width' => 'image_230-width',
-            'image_480-width' => 0,
+            'image_220-width' => 'image_220-width',
+            'image_230-width' => 0,
             'image_500-width' => 'image_500-width',
-            'image_720-width' => 0,
-            'image_760-width' => 'image_760-width',
+            'image_760-width' => 0,
+            'image_banner-770w' => 0,
             'image_banner-780w' => 0,
-            'image_banner_740w' => 0,
             'image_large' => 0,
             'image_medium' => 0,
             'image_square_thumbnail' => 0,
@@ -253,7 +251,84 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '2',
+      ),
+      'wysiwyg_imagefield' => 1,
+    ),
+  );
+
+  // Exported field: 'node-uw_web_page-field_related_link'
+  $fields['node-uw_web_page-field_related_link'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_related_link',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '1',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Add additional links related to content on this web page.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_related_link',
+      'label' => 'Related Links',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'required',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '5',
       ),
     ),
   );
@@ -305,7 +380,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sidebar_content',
-      'label' => 'Sidebar',
+      'label' => 'Custom Content',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -325,8 +400,10 @@ function uw_ct_web_page_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add additional links related to content on this web page.');
   t('Body');
-  t('Sidebar');
+  t('Custom Content');
+  t('Related Links');
   t('Upload files');
   t('Upload images');
 
