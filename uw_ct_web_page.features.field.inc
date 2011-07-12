@@ -138,7 +138,7 @@ function uw_ct_web_page_field_default_fields() {
       'settings' => array(
         'description_field' => 1,
         'file_directory' => 'uploads/files',
-        'file_extensions' => 'txt rtf xls xlsx doc docx jpg jpeg gif png tif bmp psd pdf ppt pptx avi mpg mkv mpeg flv mp3 mp4 wav',
+        'file_extensions' => 'avi bmp doc docx flv gif gz jpg jpeg mkv mp3 mp4 mpeg mpg rtf pdf png ppt pptx psd tar tif txt wav xls xlsx zip',
         'max_filesize' => '50 MB',
         'user_register_form' => FALSE,
       ),
