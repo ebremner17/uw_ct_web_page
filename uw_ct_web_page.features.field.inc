@@ -52,14 +52,14 @@ function uw_ct_web_page_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'hidden',
           'weight' => 6,
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
@@ -195,14 +195,14 @@ function uw_ct_web_page_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'file',
           'settings' => array(),
-          'type' => 'file_default',
-          'weight' => '3',
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
@@ -215,8 +215,8 @@ function uw_ct_web_page_field_default_fields() {
       'settings' => array(
         'description_field' => 1,
         'file_directory' => 'uploads/files',
-        'file_extensions' => 'avi bmp doc docx flv gif gz jpg jpeg mkv mp3 mp4 mpeg mpg rtf pdf png ppt pptx psd tar tif txt wav xls xlsx zip',
-        'max_filesize' => '50 MB',
+        'file_extensions' => 'avi doc docx flv gz mkv mp3 mp4 mpeg mpg rtf pdf ppt pptx psd tar txt wav xls xlsx zip',
+        'max_filesize' => '25 MB',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -235,7 +235,7 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -278,7 +278,7 @@ function uw_ct_web_page_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -325,7 +325,7 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '2',
+        'weight' => '3',
       ),
       'wysiwyg_imagefield' => 1,
     ),
@@ -454,7 +454,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sidebar_content',
-      'label' => 'Custom Content',
+      'label' => 'Complementary content',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
