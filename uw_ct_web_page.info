@@ -1,4 +1,5 @@
 core = "7.x"
+
 dependencies[] = "context"
 dependencies[] = "custom_breadcrumbs"
 dependencies[] = "features"
@@ -10,8 +11,11 @@ dependencies[] = "node_reference"
 dependencies[] = "pathauto"
 dependencies[] = "strongarm"
 dependencies[] = "term_reference_tree"
+dependencies[] = "uw_vocab_audience"
 dependencies[] = "views"
+
 description = "General purpose web page content type"
+
 features[context][] = "Web page sidebar content"
 features[ctools][] = "context:context:3"
 features[ctools][] = "field_group:field_group:1"

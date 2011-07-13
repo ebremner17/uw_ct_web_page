@@ -10,6 +10,83 @@
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
 
+ // Exported field: 'node-uw_web_page-audience_relation'
+  $fields['node-uw_web_page-audience_relation'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'description' => 'Intended audiences',
+      'entity_types' => array(),
+      'field_name' => 'audience_relation',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'label' => 'Audiences',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'parent' => 0,
+            'vocabulary' => 'uwaterloo_audience',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'audience_relation',
+      'label' => 'Audience',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'term_reference_tree',
+        'settings' => array(
+          'filter_view' => '',
+          'leaves_only' => 0,
+          'select_parents' => 1,
+          'start_minimized' => 1,
+        ),
+        'type' => 'term_reference_tree',
+        'weight' => '32',
+      ),
+    ),
+  );
+
   // Exported field: 'node-uw_web_page-body'
   $fields['node-uw_web_page-body'] = array(
     'field_config' => array(
@@ -398,6 +475,7 @@ function uw_ct_web_page_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add additional links related to content on this web page.');
+  t('Audience');
   t('Body');
   t('Custom Content');
   t('Related Links');
