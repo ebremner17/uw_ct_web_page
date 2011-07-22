@@ -182,8 +182,8 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'module' => 'file',
       'settings' => array(
-        'display_default' => 1,
-        'display_field' => 1,
+        'display_default' => 0,
+        'display_field' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '1',
