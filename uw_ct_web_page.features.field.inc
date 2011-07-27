@@ -435,7 +435,11 @@ function uw_ct_web_page_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'uw_web_page',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'format' => 'uw_tf_standard_sidebar'
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
