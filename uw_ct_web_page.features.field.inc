@@ -10,7 +10,7 @@
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
 
- // Exported field: 'node-uw_web_page-audience_relation'
+  // Exported field: 'node-uw_web_page-audience_relation'
   $fields['node-uw_web_page-audience_relation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -402,7 +402,7 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -437,7 +437,7 @@ function uw_ct_web_page_field_default_fields() {
       'bundle' => 'uw_web_page',
       'default_value' => array(
         0 => array(
-          'format' => 'uw_tf_standard_sidebar'
+          'format' => 'uw_tf_standard_sidebar',
         ),
       ),
       'deleted' => '0',
@@ -481,7 +481,7 @@ function uw_ct_web_page_field_default_fields() {
   t('Add additional links related to content on this web page.');
   t('Audience');
   t('Body');
-  t('Custom Content');
+  t('Complementary content');
   t('Related Links');
   t('Upload files');
   t('Upload images');

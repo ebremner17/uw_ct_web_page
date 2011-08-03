@@ -1,5 +1,4 @@
 core = "7.x"
-
 dependencies[] = "context"
 dependencies[] = "custom_breadcrumbs"
 dependencies[] = "features"
@@ -13,9 +12,7 @@ dependencies[] = "strongarm"
 dependencies[] = "term_reference_tree"
 dependencies[] = "uw_vocab_audience"
 dependencies[] = "views"
-
 description = "General purpose web page content type"
-
 features[context][] = "Web page sidebar content"
 features[ctools][] = "context:context:3"
 features[ctools][] = "field_group:field_group:1"
@@ -44,14 +41,9 @@ features[variable][] = "node_submitted_uw_web_page"
 features[variable][] = "pathauto_node_uw_web_page_pattern"
 features[views_view][] = "uw_web_page_related_links"
 features[views_view][] = "uw_web_page_sidebar_content"
-
 name = "Web Page"
-
 package = "uWaterloo Content Types"
-
 php = "5.2.4"
-
 project = "uw_ct_web_page"
 project status url = "http://wms-sand6.uwaterloo.ca/features/fserver/uw_ct_web_page/7.x"
-
 version = "7.x-1.0-alpha2"

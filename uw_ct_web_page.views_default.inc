@@ -123,7 +123,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Custom Content */
+  /* Field: Content: Complementary content */
   $handler->display->display_options['fields']['field_sidebar_content']['id'] = 'field_sidebar_content';
   $handler->display->display_options['fields']['field_sidebar_content']['table'] = 'field_data_field_sidebar_content';
   $handler->display->display_options['fields']['field_sidebar_content']['field'] = 'field_sidebar_content';
@@ -174,7 +174,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'uw_web_page' => 'uw_web_page',
   );
-  /* Filter criterion: Content: Custom Content (field_sidebar_content) */
+  /* Filter criterion: Content: Complementary content (field_sidebar_content) */
   $handler->display->display_options['filters']['field_sidebar_content_value']['id'] = 'field_sidebar_content_value';
   $handler->display->display_options['filters']['field_sidebar_content_value']['table'] = 'field_data_field_sidebar_content';
   $handler->display->display_options['filters']['field_sidebar_content_value']['field'] = 'field_sidebar_content_value';
