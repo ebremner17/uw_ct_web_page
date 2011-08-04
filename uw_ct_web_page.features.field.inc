@@ -292,7 +292,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Upload images',
       'required' => 0,
       'settings' => array(
-        'alt_field' => 1,
+        'alt_field' => 0,
         'file_directory' => 'uploads/images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
