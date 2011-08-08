@@ -10,15 +10,15 @@
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-uw_web_page-audience_relation'
-  $fields['node-uw_web_page-audience_relation'] = array(
+  // Exported field: 'node-uw_web_page-field_audience'
+  $fields['node-uw_web_page-field_audience'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'description' => 'Intended audiences',
       'entity_types' => array(),
-      'field_name' => 'audience_relation',
+      'field_name' => 'field_audience',
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -66,7 +66,7 @@ function uw_ct_web_page_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'audience_relation',
+      'field_name' => 'field_audience',
       'label' => 'Audience',
       'required' => 0,
       'settings' => array(
