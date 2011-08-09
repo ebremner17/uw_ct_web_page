@@ -38,31 +38,9 @@ function uw_ct_web_page_views_api() {
 function uw_ct_web_page_image_default_styles() {
   $styles = array();
 
-  // Exported image style: 220-width
-  $styles['220-width'] = array(
-    'name' => '220-width',
-    'effects' => array(
-      5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => '220',
-          'height' => '',
-          'upscale' => 1,
-        ),
-        'weight' => '1',
-      ),
-    ),
-  );
-
-  // Exported image style: 500-width
-  $styles['500-width'] = array(
-    'name' => '500-width',
+  // Exported image style: body-500px-wide
+  $styles['body-500px-wide'] = array(
+    'name' => 'body-500px-wide',
     'effects' => array(
       3 => array(
         'label' => 'Scale',
@@ -74,6 +52,28 @@ function uw_ct_web_page_image_default_styles() {
         'name' => 'image_scale',
         'data' => array(
           'width' => '500',
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported image style: sidebar-220px-wide
+  $styles['sidebar-220px-wide'] = array(
+    'name' => 'sidebar-220px-wide',
+    'effects' => array(
+      5 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '220',
           'height' => '',
           'upscale' => 1,
         ),

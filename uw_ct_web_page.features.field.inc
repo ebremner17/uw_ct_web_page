@@ -10,83 +10,6 @@
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-uw_web_page-field_audience'
-  $fields['node-uw_web_page-field_audience'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'description' => 'Intended audiences',
-      'entity_types' => array(),
-      'field_name' => 'field_audience',
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'label' => 'Audiences',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'parent' => 0,
-            'vocabulary' => 'uwaterloo_audience',
-          ),
-        ),
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'uw_web_page',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'taxonomy',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 6,
-        ),
-        'teaser' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'field_audience',
-      'label' => 'Audience',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'term_reference_tree',
-        'settings' => array(
-          'filter_view' => '',
-          'leaves_only' => 0,
-          'select_parents' => 1,
-          'start_minimized' => 1,
-        ),
-        'type' => 'term_reference_tree',
-        'weight' => '32',
-      ),
-    ),
-  );
-
   // Exported field: 'node-uw_web_page-body'
   $fields['node-uw_web_page-body'] = array(
     'field_config' => array(
@@ -159,6 +82,83 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-uw_web_page-field_audience'
+  $fields['node-uw_web_page-field_audience'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'description' => 'Intended audiences',
+      'entity_types' => array(),
+      'field_name' => 'field_audience',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'label' => 'Audiences',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'parent' => 0,
+            'vocabulary' => 'uwaterloo_audience',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_audience',
+      'label' => 'Audience',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'term_reference_tree',
+        'settings' => array(
+          'filter_view' => '',
+          'leaves_only' => 0,
+          'select_parents' => 1,
+          'start_minimized' => 1,
+        ),
+        'type' => 'term_reference_tree',
+        'weight' => '7',
+      ),
+    ),
+  );
+
   // Exported field: 'node-uw_web_page-field_file'
   $fields['node-uw_web_page-field_file'] = array(
     'field_config' => array(
@@ -210,7 +210,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_file',
-      'label' => 'Upload files',
+      'label' => 'Upload related files',
       'required' => 0,
       'settings' => array(
         'description_field' => 1,
@@ -223,19 +223,26 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
-          'insert' => 0,
+          'insert' => 1,
           'insert_class' => '',
-          'insert_default' => array(
-            0 => 'auto',
-          ),
+          'insert_default' => 'auto',
           'insert_styles' => array(
-            0 => 'auto',
+            'auto' => 0,
+            'image' => 0,
+            'image_220-width' => 0,
+            'image_500-width' => 0,
+            'image_banner-770w' => 0,
+            'image_large' => 0,
+            'image_medium' => 0,
+            'image_profile-photo' => 0,
+            'image_thumbnail' => 0,
+            'link' => 0,
           ),
           'insert_width' => '',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -311,12 +318,12 @@ function uw_ct_web_page_field_default_fields() {
           'insert_styles' => array(
             'auto' => 0,
             'image' => 'image',
-            'image_220-width' => 'image_220-width',
-            'image_500-width' => 'image_500-width',
             'image_banner-770w' => 0,
+            'image_body-500px-wide' => 'image_body-500px-wide',
             'image_large' => 0,
             'image_medium' => 0,
             'image_profile-photo' => 0,
+            'image_sidebar-220px-wide' => 'image_sidebar-220px-wide',
             'image_thumbnail' => 0,
             'link' => 0,
           ),
@@ -325,7 +332,7 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '3',
+        'weight' => '4',
       ),
       'wysiwyg_imagefield' => 1,
     ),
@@ -396,6 +403,7 @@ function uw_ct_web_page_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
+        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
@@ -483,8 +491,8 @@ function uw_ct_web_page_field_default_fields() {
   t('Body');
   t('Complementary content');
   t('Related Links');
-  t('Upload files');
   t('Upload images');
+  t('Upload related files');
 
   return $fields;
 }
