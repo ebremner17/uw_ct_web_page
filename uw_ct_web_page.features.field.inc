@@ -154,7 +154,7 @@ function uw_ct_web_page_field_default_fields() {
           'start_minimized' => 1,
         ),
         'type' => 'term_reference_tree',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
