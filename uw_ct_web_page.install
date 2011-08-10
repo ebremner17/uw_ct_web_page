@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install, update and uninstall functions for the uw_ct_web_page module.
+ */
+
+/**
  * Implementation of hook_install()
  */
 
