@@ -1,6 +1,5 @@
 core = "7.x"
 dependencies[] = "context"
-dependencies[] = "custom_breadcrumbs"
 dependencies[] = "features"
 dependencies[] = "field_group"
 dependencies[] = "image"
