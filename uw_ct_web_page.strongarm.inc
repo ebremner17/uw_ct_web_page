@@ -195,7 +195,7 @@ function uw_ct_web_page_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'workbench_moderation_default_state_uw_web_page';
-  $strongarm->value = 'Draft';
+  $strongarm->value = 'draft';
   $export['workbench_moderation_default_state_uw_web_page'] = $strongarm;
 
   return $export;
