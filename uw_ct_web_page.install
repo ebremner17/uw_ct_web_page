@@ -6,11 +6,11 @@
  */
 
 /**
- * Implementation of hook_install()
+ * Implements hook_install().
  */
 
 function uw_ct_web_page_install() {
- 
+
   // Insert default pre-defined RDF mapping into the database.
   $rdf_mappings = array(
     array(
