@@ -24,6 +24,25 @@ function uw_ct_web_page_install() {
     rdf_mapping_save($rdf_mapping);
   }
 
+  // Load the shortcut.admin.inc file so we can use the shorcut_admin_add_link and shortcut_set_save functions
+  module_load_include('inc', 'shortcut', 'shortcut.admin');
+
+  // Load the Default shortcut set
+  $shortcut_set = shortcut_default_set();
+
+  // Build the link to the Promotional Items
+  $link = array(
+    'link_title' => 'Web pages',
+    'link_path' => 'admin/workbench/manage/web-pages',
+    'menu_name' => 'shortcut-set-1',
+  );
+
+  // Add the link to the default shortcut set object
+  shortcut_admin_add_link($link, $shortcut_set);
+
+  // Save the shortcut set object
+  shortcut_set_save($shortcut_set);
+
   // Kris Notes: Sept. 1, 2011
   // While this is set with strongarm, if the variable is not added to the database many errors are generated
   // Issue occurs in workbench_moderation.module line 878
@@ -41,4 +60,10 @@ function uw_ct_web_page_install() {
 function uw_ct_web_page_uninstall() {
   // Remove the RDF mapping from the database
   rdf_mapping_delete('node', 'uw_web_page');
+
+  // Delete the shortcut link that we added
+  menu_link_delete(NULL, 'admin/workbench/manage/web-pages');
+
+  // Remove the variable that we set
+  variable_del('node_options_uw_web_page');
 }
