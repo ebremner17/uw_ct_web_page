@@ -33,7 +33,7 @@ function uw_ct_web_page_install() {
   // Build the link to the Promotional Items
   $link = array(
     'link_title' => 'Web pages',
-    'link_path' => 'admin/workbench/manage/web-pages',
+    'link_path' => 'admin/manage/web-pages',
     'menu_name' => 'shortcut-set-1',
     'weight' => -12,
   );
@@ -63,7 +63,7 @@ function uw_ct_web_page_uninstall() {
   rdf_mapping_delete('node', 'uw_web_page');
 
   // Delete the shortcut link that we added
-  menu_link_delete(NULL, 'admin/workbench/manage/web-pages');
+  menu_link_delete(NULL, 'admin/manage/web-pages');
 
   // Remove the variable that we set
   variable_del('node_options_uw_web_page');

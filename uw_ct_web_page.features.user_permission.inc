@@ -49,8 +49,9 @@ function uw_ct_web_page_user_default_permissions() {
     'name' => 'edit any uw_web_page content',
     'roles' => array(
       0 => 'administrator',
-      1 => 'content editor',
-      2 => 'site manager',
+      1 => 'content author',
+      2 => 'content editor',
+      3 => 'site manager',
     ),
     'module' => 'node',
   );

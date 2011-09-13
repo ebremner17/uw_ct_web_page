@@ -198,7 +198,13 @@ function uw_ct_web_page_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Manage Web Pages';
   $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    4 => '4',
+    5 => '5',
+    6 => '6',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -596,7 +602,7 @@ function uw_ct_web_page_views_default_views() {
 
   /* Display: Manage Web Pages */
   $handler = $view->new_display('page', 'Manage Web Pages', 'manage_web_pages');
-  $handler->display->display_options['path'] = 'admin/workbench/manage/web-pages';
+  $handler->display->display_options['path'] = 'admin/manage/web-pages';
   $export['web_pages'] = $view;
 
   return $export;
