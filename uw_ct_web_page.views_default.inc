@@ -302,7 +302,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['header']['area_1']['empty'] = TRUE;
   $handler->display->display_options['header']['area_1']['content'] = '<ul class="action-links">
 <li>
-<a href="../../../node/add/uw-web-page">Add web page</a>
+<a href="../../node/add/uw-web-page">Add web page</a>
 </li>
 </ul>';
   $handler->display->display_options['header']['area_1']['format'] = 'uw_tf_standard';
