@@ -32,13 +32,13 @@ function uw_ct_web_page_context_default_contexts() {
         'views-b4027a2b0aca8e4b4e840a47f52a7d6b' => array(
           'module' => 'views',
           'delta' => 'b4027a2b0aca8e4b4e840a47f52a7d6b',
-          'region' => 'sidebar',
+          'region' => 'sidebar_second',
           'weight' => '-16',
         ),
         'views-uw_web_page_related_links-block' => array(
           'module' => 'views',
           'delta' => 'uw_web_page_related_links-block',
-          'region' => 'sidebar',
+          'region' => 'sidebar_second',
           'weight' => '-15',
         ),
       ),
