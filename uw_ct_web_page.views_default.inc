@@ -302,7 +302,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['header']['area_1']['empty'] = TRUE;
   $handler->display->display_options['header']['area_1']['content'] = '<ul class="action-links">
 <li>
-<a href="../../node/add/uw-web-page">Add web page</a>
+<a href="../../../node/add/uw-web-page">Add web page</a>
 </li>
 </ul>';
   $handler->display->display_options['header']['area_1']['format'] = 'uw_tf_standard';
@@ -602,7 +602,7 @@ function uw_ct_web_page_views_default_views() {
 
   /* Display: Manage Web Pages */
   $handler = $view->new_display('page', 'Manage Web Pages', 'manage_web_pages');
-  $handler->display->display_options['path'] = 'admin/manage/web-pages';
+  $handler->display->display_options['path'] = 'admin/workbench/manage/web-pages';
   $export['web_pages'] = $view;
 
   return $export;
