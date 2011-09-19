@@ -11,10 +11,10 @@ include_once('uw_ct_web_page.features.inc');
  * FORM_ID = uw_web_page_node_form (node add/edit form)
  */
 function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
-  
+
   $sidebar = $form['#groups']['group_sidebar'];
   $language = $form['language']['#value'];
-  
+
   // We expand the sidebar field group if any of its fields contain content
   foreach ($sidebar -> children as $field) {
     if (!empty($form[$field][$language][0]['#default_value'])) {
@@ -22,5 +22,23 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
        break;
     }
   }
-  
+
+}
+
+
+/**
+ * Implements hook_page_build().
+ *
+ * Add the breadcrumbs for the management view
+ */
+function uw_ct_web_page_page_build() {
+  $path = current_path();
+
+  if ($path == 'admin/workbench/manage/web-pages') {
+    $breadcrumb = drupal_get_breadcrumb();
+    $breadcrumb[1] = l('Administration', 'admin');
+    $breadcrumb[2] = l('My Workbench', 'admin/workbench');
+    $breadcrumb[3] = l('Create/Manage Content', 'admin/workbench/create');
+    drupal_set_breadcrumb($breadcrumb);
+  }
 }
