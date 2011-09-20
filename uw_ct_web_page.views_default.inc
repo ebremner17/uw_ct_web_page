@@ -196,7 +196,7 @@ function uw_ct_web_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Manage Web Pages';
+  $handler->display->display_options['title'] = 'Create/Manage Web Pages';
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -602,7 +602,10 @@ function uw_ct_web_page_views_default_views() {
 
   /* Display: Manage Web Pages */
   $handler = $view->new_display('page', 'Manage Web Pages', 'manage_web_pages');
-  $handler->display->display_options['path'] = 'admin/workbench/manage/web-pages';
+  $handler->display->display_options['path'] = 'admin/workbench/create/web-pages';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Web pages';
+  $handler->display->display_options['menu']['weight'] = '15';
   $export['web_pages'] = $view;
 
   return $export;
