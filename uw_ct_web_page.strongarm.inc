@@ -131,55 +131,6 @@ function uw_ct_web_page_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_publish_enable_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_publish_enable_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_publish_required_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_publish_required_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_publish_revision_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_publish_revision_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_publish_touch_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_publish_touch_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_unpublish_enable_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_unpublish_enable_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_unpublish_required_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_unpublish_required_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'scheduler_unpublish_revision_uw_web_page';
-  $strongarm->value = 0;
-  $export['scheduler_unpublish_revision_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'show_diff_inline_uw_web_page';
   $strongarm->value = 0;
   $export['show_diff_inline_uw_web_page'] = $strongarm;
