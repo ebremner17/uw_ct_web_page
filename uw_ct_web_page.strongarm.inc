@@ -124,13 +124,6 @@ function uw_ct_web_page_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'publishcontent_uw_web_page';
-  $strongarm->value = 1;
-  $export['publishcontent_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'show_diff_inline_uw_web_page';
   $strongarm->value = 0;
   $export['show_diff_inline_uw_web_page'] = $strongarm;
