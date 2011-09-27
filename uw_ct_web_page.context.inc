@@ -13,7 +13,7 @@ function uw_ct_web_page_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Web page sidebar content';
+  $context->name = 'web_page_sidebar_content';
   $context->description = 'Displays web page sidebar content.';
   $context->tag = 'Content';
   $context->conditions = array(
@@ -50,7 +50,7 @@ function uw_ct_web_page_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Displays web page sidebar content.');
-  $export['Web page sidebar content'] = $context;
+  $export['web_page_sidebar_content'] = $context;
 
   return $export;
 }
