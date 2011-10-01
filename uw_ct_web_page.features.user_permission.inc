@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_user_default_permissions().
+ * Implements hook_user_default_permissions().
  */
 function uw_ct_web_page_user_default_permissions() {
   $permissions = array();
@@ -66,6 +66,42 @@ function uw_ct_web_page_user_default_permissions() {
       3 => 'site manager',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: enter uw_web_page revision log entry
+  $permissions['enter uw_web_page revision log entry'] = array(
+    'name' => 'enter uw_web_page revision log entry',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'content author',
+      2 => 'content editor',
+      3 => 'site manager',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override uw_web_page published option
+  $permissions['override uw_web_page published option'] = array(
+    'name' => 'override uw_web_page published option',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'content author',
+      2 => 'content editor',
+      3 => 'site manager',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override uw_web_page revision option
+  $permissions['override uw_web_page revision option'] = array(
+    'name' => 'override uw_web_page revision option',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'content author',
+      2 => 'content editor',
+      3 => 'site manager',
+    ),
+    'module' => 'override_node_options',
   );
 
   return $permissions;
