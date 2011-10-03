@@ -6,11 +6,10 @@
  */
 
 /**
- * Implements hook_install().
+ * Implementation of hook_install()
  */
 
 function uw_ct_web_page_install() {
-
   // Insert default pre-defined RDF mapping into the database.
   $rdf_mappings = array(
     array(
@@ -24,6 +23,15 @@ function uw_ct_web_page_install() {
   foreach ($rdf_mappings as $rdf_mapping) {
     rdf_mapping_save($rdf_mapping);
   }
+
+  // Kris Notes: Sept. 1, 2011
+  // While this is set with strongarm, if the variable is not added to the database many errors are generated
+  // Issue occurs in workbench_moderation.module line 878
+  // if (in_array('revision', $options) && in_array('moderation', $options)) initially evaluates as false
+  // this prevents the workbench moderation array from being added to the node object, and everything falls apart
+
+  // Do one variable_set for every content type using workbench moderation
+  variable_set('node_options_uw_web_page', array(0 => 'moderation',1 => 'revision'));
 }
 
 
@@ -33,4 +41,7 @@ function uw_ct_web_page_install() {
 function uw_ct_web_page_uninstall() {
   // Remove the RDF mapping from the database
   rdf_mapping_delete('node', 'uw_web_page');
+
+  // Remove the variable that we set
+  variable_del('node_options_uw_web_page');
 }

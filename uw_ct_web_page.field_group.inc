@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_group_info().
+ * Implementation of hook_field_group_info().
  */
 function uw_ct_web_page_field_group_info() {
   $export = array();

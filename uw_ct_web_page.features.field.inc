@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_default_fields().
+ * Implementation of hook_field_default_fields().
  */
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
@@ -215,7 +215,7 @@ function uw_ct_web_page_field_default_fields() {
       'settings' => array(
         'description_field' => 1,
         'file_directory' => 'uploads/files',
-        'file_extensions' => 'avi doc docx flv gz mkv mp3 mp4 mpeg mpg rtf pdf ppt pptx psd tar txt wav xls xlsx zip',
+        'file_extensions' => 'doc docx gz mp3 rtf pdf ppt pptx psd tar txt wav xls xlsx zip',
         'max_filesize' => '25 MB',
         'user_register_form' => FALSE,
       ),
@@ -223,6 +223,22 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(
+              'attach' => 0,
+              'imce' => 'imce',
+              'reference' => 'reference',
+              'remote' => 'remote',
+            ),
+            'source_attach' => array(
+              'absolute' => '0',
+              'attach_mode' => 'copy',
+              'path' => 'file_attach',
+            ),
+            'source_reference' => array(
+              'autocomplete' => '1',
+            ),
+          ),
           'insert' => 1,
           'insert_class' => '',
           'insert_default' => 'auto',
@@ -312,6 +328,22 @@ function uw_ct_web_page_field_default_fields() {
         'active' => 1,
         'module' => 'image',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(
+              'attach' => 0,
+              'imce' => 'imce',
+              'reference' => 'reference',
+              'remote' => 'remote',
+            ),
+            'source_attach' => array(
+              'absolute' => '0',
+              'attach_mode' => 'copy',
+              'path' => 'file_attach',
+            ),
+            'source_reference' => array(
+              'autocomplete' => '1',
+            ),
+          ),
           'insert' => 1,
           'insert_class' => '',
           'insert_default' => 'image',

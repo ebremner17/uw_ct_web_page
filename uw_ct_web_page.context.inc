@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_context_default_contexts().
+ * Implementation of hook_context_default_contexts().
  */
 function uw_ct_web_page_context_default_contexts() {
   $export = array();
@@ -13,7 +13,7 @@ function uw_ct_web_page_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Web page sidebar content';
+  $context->name = 'web_page_sidebar_content';
   $context->description = 'Displays web page sidebar content.';
   $context->tag = 'Content';
   $context->conditions = array(
@@ -32,13 +32,13 @@ function uw_ct_web_page_context_default_contexts() {
         'views-b4027a2b0aca8e4b4e840a47f52a7d6b' => array(
           'module' => 'views',
           'delta' => 'b4027a2b0aca8e4b4e840a47f52a7d6b',
-          'region' => 'sidebar',
+          'region' => 'sidebar_second',
           'weight' => '-16',
         ),
         'views-uw_web_page_related_links-block' => array(
           'module' => 'views',
           'delta' => 'uw_web_page_related_links-block',
-          'region' => 'sidebar',
+          'region' => 'sidebar_second',
           'weight' => '-15',
         ),
       ),
@@ -50,7 +50,7 @@ function uw_ct_web_page_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Content');
   t('Displays web page sidebar content.');
-  $export['Web page sidebar content'] = $context;
+  $export['web_page_sidebar_content'] = $context;
 
   return $export;
 }
