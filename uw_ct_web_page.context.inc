@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_context_default_contexts().
+ * Implements hook_context_default_contexts().
  */
 function uw_ct_web_page_context_default_contexts() {
   $export = array();
@@ -29,9 +29,9 @@ function uw_ct_web_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-b4027a2b0aca8e4b4e840a47f52a7d6b' => array(
-          'module' => 'views',
-          'delta' => 'b4027a2b0aca8e4b4e840a47f52a7d6b',
+        'uw_ct_web_page-uw_sidebar_block' => array(
+          'module' => 'uw_ct_web_page',
+          'delta' => 'uw_sidebar_block',
           'region' => 'sidebar_second',
           'weight' => '-16',
         ),

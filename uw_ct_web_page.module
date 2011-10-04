@@ -42,3 +42,68 @@ function uw_ct_web_page_page_build() {
     drupal_set_breadcrumb($breadcrumb);
   }
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function uw_ct_web_page_block_info() {
+  $blocks['uw_sidebar_block'] = array(
+    // info: The name of the block.
+    'info' => t('uWaterloo Sidebar Block'),
+    // Block caching options (per role, per user, etc.)
+    'cache' => DRUPAL_CACHE_PER_ROLE, // default
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function uw_ct_web_page_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'uw_sidebar_block':
+      // no title $block['subject'] = t('');
+      $block['content'] = uw_ct_web_page_contents();
+      break;
+  }
+  return $block;
+}
+
+function uw_ct_web_page_contents() {
+  if (arg(0) === 'node') {
+    $params = array('nid' => intval(arg(1)));
+
+    switch (arg(2)) {
+      case 'revisions':
+        $revision_id = ':revision_id';
+        $params['revision_id'] = intval(arg(3));
+        break;
+      case 'draft':
+        $revision_id = "(SELECT MAX(revision_id) FROM {field_revision_field_sidebar_content} WHERE entity_id = :nid)";
+        break;
+      default:
+        $revision_id = "(SELECT vid FROM {node} WHERE nid = :nid)";
+    }
+
+    $result = db_query("SELECT revision_id, field_sidebar_content_value
+      FROM (
+        SELECT * FROM {field_data_field_sidebar_content}
+      UNION
+        SELECT * FROM {field_revision_field_sidebar_content}
+      ) AS combined
+      WHERE (bundle = 'uw_web_page')
+        AND (field_sidebar_content_value IS NOT NULL)
+        AND (revision_id = $revision_id)
+        AND (entity_id = :nid)", $params);
+
+    $output = '';
+    foreach ($result as $record) {
+      $output .= $record->field_sidebar_content_value;
+    }
+
+    if ($output) {
+      return array('#markup' => $output);
+    }
+  }
+}

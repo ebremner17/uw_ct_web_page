@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
@@ -152,6 +152,8 @@ function uw_ct_web_page_field_default_fields() {
           'leaves_only' => 0,
           'select_parents' => 1,
           'start_minimized' => 1,
+          'token_display' => '',
+          'track_list' => 0,
         ),
         'type' => 'term_reference_tree',
         'weight' => '6',
