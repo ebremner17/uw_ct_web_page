@@ -119,7 +119,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
       case 'field_related_link':
         $output = array();
         foreach ($result as $record) {
-          $output[] = '<a href="' . $record->field_related_link_url . '">' . $record->field_related_link_title . '</a>';
+          $output[] = '<a href="' . check_url($record->field_related_link_url) . '">' . $record->field_related_link_title . '</a>';
         }
         if ($output) {
           $output = '<ul><li>' . implode('</li><li>', $output) . '</li></ul>';
@@ -128,7 +128,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
     }
 
     if ($output) {
-      return array('#markup' => $output);
+      return array('#markup' => check_markup($output, 'uw_tf_standard_sidebar'));
     }
   }
 }
