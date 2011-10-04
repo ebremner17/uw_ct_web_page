@@ -79,7 +79,7 @@ function uw_ct_web_page_strongarm() {
   $strongarm->name = 'menu_options_uw_web_page';
   $strongarm->value = array(
     0 => 'main-menu',
-    1 => 'menu-site-footer',
+    1 => 'menu-audience-menu',
   );
   $export['menu_options_uw_web_page'] = $strongarm;
 
