@@ -6,7 +6,7 @@
  */
 
 /**
- * Implementation of hook_install()
+ * Implements hook_install()
  */
 
 function uw_ct_web_page_install() {
@@ -31,7 +31,7 @@ function uw_ct_web_page_install() {
   // this prevents the workbench moderation array from being added to the node object, and everything falls apart
 
   // Do one variable_set for every content type using workbench moderation
-  variable_set('node_options_uw_web_page', array(0 => 'moderation',1 => 'revision'));
+  variable_set('node_options_uw_web_page', array(0 => 'moderation', 1 => 'revision'));
 }
 
 

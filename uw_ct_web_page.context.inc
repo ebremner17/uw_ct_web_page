@@ -35,9 +35,9 @@ function uw_ct_web_page_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-16',
         ),
-        'views-uw_web_page_related_links-block' => array(
-          'module' => 'views',
-          'delta' => 'uw_web_page_related_links-block',
+        'uw_ct_web_page-uw_sidebar_related_links' => array(
+          'module' => 'uw_ct_web_page',
+          'delta' => 'uw_sidebar_related_links',
           'region' => 'sidebar_second',
           'weight' => '-15',
         ),
