@@ -13,13 +13,6 @@ function uw_ct_web_page_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_uw_web_page';
-  $strongarm->value = 'edit-submission';
-  $export['additional_settings__active_tab_uw_web_page'] = $strongarm;
-
-  $strongarm = new stdClass;
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_uw_web_page';
   $strongarm->value = 0;
   $export['comment_anonymous_uw_web_page'] = $strongarm;
@@ -78,8 +71,8 @@ function uw_ct_web_page_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_uw_web_page';
   $strongarm->value = array(
-    0 => 'main-menu',
-    1 => 'menu-audience-menu',
+    0 => 'menu-audience-menu',
+    1 => 'main-menu',
   );
   $export['menu_options_uw_web_page'] = $strongarm;
 
@@ -141,6 +134,16 @@ function uw_ct_web_page_strongarm() {
   $strongarm->name = 'workbench_moderation_default_state_uw_web_page';
   $strongarm->value = 'draft';
   $export['workbench_moderation_default_state_uw_web_page'] = $strongarm;
+
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_uw_web_page';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_uw_web_page'] = $strongarm;
 
   return $export;
 }
