@@ -93,9 +93,9 @@ function uw_ct_web_page_node_info() {
     'uw_web_page' => array(
       'name' => t('Web Page'),
       'base' => 'node_content',
-      'description' => t('A generic web page.'),
+      'description' => t('Web pages have main and sidebar content areas, as well as related links.'),
       'has_title' => '1',
-      'title_label' => t('Heading'),
+      'title_label' => t('Heading (required)'),
       'help' => '',
     ),
   );

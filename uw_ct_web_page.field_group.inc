@@ -19,15 +19,14 @@ function uw_ct_web_page_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Sidebar Content',
+    'label' => 'Sidebar complimentary content',
     'weight' => '2',
     'children' => array(
-      0 => 'field_related_link',
-      1 => 'field_sidebar_content',
+      0 => 'field_sidebar_content',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Sidebar Content',
+      'label' => 'Sidebar complimentary content',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',
@@ -47,15 +46,14 @@ function uw_ct_web_page_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Upload',
-    'weight' => '3',
+    'label' => 'Upload an image',
+    'weight' => '4',
     'children' => array(
-      0 => 'field_file',
-      1 => 'field_image',
+      0 => 'field_image',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Upload',
+      'label' => 'Upload an image',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',

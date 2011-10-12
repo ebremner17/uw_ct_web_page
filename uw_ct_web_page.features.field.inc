@@ -212,7 +212,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_file',
-      'label' => 'Upload related files',
+      'label' => 'Choose a file',
       'required' => 0,
       'settings' => array(
         'description_field' => 1,
@@ -247,12 +247,13 @@ function uw_ct_web_page_field_default_fields() {
           'insert_styles' => array(
             'auto' => 0,
             'image' => 0,
-            'image_220-width' => 0,
-            'image_500-width' => 0,
-            'image_banner-770w' => 0,
+            'image_banner-750w' => 0,
+            'image_body-500px-wide' => 0,
+            'image_body-500px-wide-max' => 0,
             'image_large' => 0,
             'image_medium' => 0,
-            'image_profile-photo' => 0,
+            'image_profile-photo-block' => 0,
+            'image_sidebar-220px-wide' => 0,
             'image_thumbnail' => 0,
             'link' => 0,
           ),
@@ -260,7 +261,7 @@ function uw_ct_web_page_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '5',
+        'weight' => '3',
       ),
     ),
   );
@@ -314,7 +315,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_image',
-      'label' => 'Upload images',
+      'label' => 'Choose an image',
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
@@ -352,21 +353,22 @@ function uw_ct_web_page_field_default_fields() {
           'insert_styles' => array(
             'auto' => 0,
             'image' => 'image',
-            'image_banner-770w' => 0,
+            'image_banner-750w' => 0,
             'image_body-500px-wide' => 'image_body-500px-wide',
+            'image_body-500px-wide-max' => 0,
             'image_large' => 0,
             'image_medium' => 0,
-            'image_profile-photo' => 0,
+            'image_profile-photo-block' => 0,
             'image_sidebar-220px-wide' => 'image_sidebar-220px-wide',
             'image_thumbnail' => 0,
             'link' => 0,
           ),
-          'insert_width' => '',
+          'insert_width' => '500',
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'image_image',
-        'weight' => '4',
+        'weight' => '3',
       ),
       'wysiwyg_imagefield' => 1,
     ),
@@ -421,13 +423,15 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_related_link',
-      'label' => 'Related Links',
+      'label' => 'Add related links',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
           'class' => '',
+          'configurable_title' => 0,
           'rel' => '',
           'target' => 'default',
+          'title' => '',
         ),
         'display' => array(
           'url_cutoff' => '80',
@@ -444,7 +448,7 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -477,11 +481,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'uw_web_page',
-      'default_value' => array(
-        0 => array(
-          'format' => 'uw_tf_standard_sidebar',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -500,7 +500,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sidebar_content',
-      'label' => 'Complementary content',
+      'label' => 'Add complementary content',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -521,12 +521,12 @@ function uw_ct_web_page_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add additional links related to content on this web page.');
+  t('Add complementary content');
+  t('Add related links');
   t('Audience');
   t('Body');
-  t('Complementary content');
-  t('Related Links');
-  t('Upload images');
-  t('Upload related files');
+  t('Choose a file');
+  t('Choose an image');
 
   return $fields;
 }
