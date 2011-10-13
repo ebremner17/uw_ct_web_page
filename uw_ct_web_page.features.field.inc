@@ -228,7 +228,7 @@ function uw_ct_web_page_field_default_fields() {
           'filefield_sources' => array(
             'filefield_sources' => array(
               'attach' => 0,
-              'imce' => 'imce',
+              'imce' => 0,
               'reference' => 'reference',
               'remote' => 'remote',
             ),
@@ -334,7 +334,7 @@ function uw_ct_web_page_field_default_fields() {
           'filefield_sources' => array(
             'filefield_sources' => array(
               'attach' => 0,
-              'imce' => 'imce',
+              'imce' => 0,
               'reference' => 'reference',
               'remote' => 'remote',
             ),
