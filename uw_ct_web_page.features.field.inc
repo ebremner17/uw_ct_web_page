@@ -228,7 +228,7 @@ function uw_ct_web_page_field_default_fields() {
           'filefield_sources' => array(
             'filefield_sources' => array(
               'attach' => 0,
-              'imce' => 0,
+              'imce' => 'imce',
               'reference' => 'reference',
               'remote' => 'remote',
             ),
@@ -334,7 +334,7 @@ function uw_ct_web_page_field_default_fields() {
           'filefield_sources' => array(
             'filefield_sources' => array(
               'attach' => 0,
-              'imce' => 0,
+              'imce' => 'imce',
               'reference' => 'reference',
               'remote' => 'remote',
             ),
@@ -481,7 +481,11 @@ function uw_ct_web_page_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'uw_web_page',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'format' => 'uw_tf_standard_sidebar',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
