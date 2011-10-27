@@ -11,6 +11,7 @@ function uw_ct_web_page_field_group_info() {
   $export = array();
 
   $field_group = new stdClass;
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sidebar_relatedlinks|node|uw_web_page|form';
   $field_group->group_name = 'group_sidebar_relatedlinks';
@@ -38,6 +39,7 @@ function uw_ct_web_page_field_group_info() {
   $export['group_sidebar_relatedlinks|node|uw_web_page|form'] = $field_group;
 
   $field_group = new stdClass;
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_sidebar|node|uw_web_page|form';
   $field_group->group_name = 'group_sidebar';
