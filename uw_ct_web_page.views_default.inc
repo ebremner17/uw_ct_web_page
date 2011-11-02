@@ -431,7 +431,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['path'] = 'admin/workbench/create/web-pages';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Web pages';
-  $handler->display->display_options['menu']['weight'] = '50';
+  $handler->display->display_options['menu']['weight'] = '5';
   $export['web_pages'] = $view;
 
   return $export;
