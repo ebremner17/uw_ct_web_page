@@ -120,7 +120,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
       case 'field_related_link':
         $output = array();
         foreach ($result as $record) {
-          $output[] = '<a href="' . check_url($record->field_related_link_url) . '">' . $record->field_related_link_title . '</a>';
+          $output[] = l($record->field_related_link_title, $record->field_related_link_url);
         }
         if ($output) {
           $output = '<ul><li>' . implode('</li><li>', $output) . '</li></ul>';
