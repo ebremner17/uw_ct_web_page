@@ -310,36 +310,12 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['workbench_moderation_history_link']['empty_zero'] = 0;
   $handler->display->display_options['fields']['workbench_moderation_history_link']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['workbench_moderation_history_link']['text'] = 'Moderate';
-  /* Field: Content: Delete link */
-  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
-  $handler->display->display_options['fields']['delete_node']['table'] = 'node';
-  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
-  $handler->display->display_options['fields']['delete_node']['label'] = '';
-  $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['delete_node']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['delete_node']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['delete_node']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['delete_node']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['delete_node']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['delete_node']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['delete_node']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['delete_node']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['delete_node']['text'] = 'Delete';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="links"><li>[view_node]</li><li>[edit_node]</li><li>[workbench_moderation_history_link]</li><li>[delete_node]</li></ul>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="links"><li>[view_node]</li><li>[edit_node]</li><li>[workbench_moderation_history_link]</li></ul>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
@@ -381,6 +357,28 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nid']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['nid']['format_plural'] = 0;
+  /* Field: Workbench Moderation: Moderation Links */
+  $handler->display->display_options['fields']['moderation_actions']['id'] = 'moderation_actions';
+  $handler->display->display_options['fields']['moderation_actions']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['fields']['moderation_actions']['field'] = 'moderation_actions';
+  $handler->display->display_options['fields']['moderation_actions']['label'] = 'Moderate';
+  $handler->display->display_options['fields']['moderation_actions']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['moderation_actions']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['moderation_actions']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['moderation_actions']['hide_alter_empty'] = 0;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -425,6 +423,19 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
   $handler->display->display_options['filters']['uid']['expose']['multiple'] = FALSE;
   $handler->display->display_options['filters']['uid']['expose']['reduce'] = 0;
+  /* Filter criterion: Workbench Moderation: Current */
+  $handler->display->display_options['filters']['current']['id'] = 'current';
+  $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['current']['field'] = 'current';
+  $handler->display->display_options['filters']['current']['value'] = '1';
+  /* Filter criterion: Workbench Moderation: State */
+  $handler->display->display_options['filters']['state']['id'] = 'state';
+  $handler->display->display_options['filters']['state']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['state']['field'] = 'state';
+  $handler->display->display_options['filters']['state']['operator'] = 'not in';
+  $handler->display->display_options['filters']['state']['value'] = array(
+    'archived' => 'archived',
+  );
 
   /* Display: Manage Web Pages */
   $handler = $view->new_display('page', 'Manage Web Pages', 'manage_web_pages');

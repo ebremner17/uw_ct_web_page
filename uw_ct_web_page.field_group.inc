@@ -83,7 +83,7 @@ function uw_ct_web_page_field_group_info() {
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Upload a file',
+      'label' => 'Upload a file, yo!',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',
