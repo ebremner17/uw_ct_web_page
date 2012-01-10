@@ -320,7 +320,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['moderation_actions']['id'] = 'moderation_actions';
   $handler->display->display_options['fields']['moderation_actions']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['fields']['moderation_actions']['field'] = 'moderation_actions';
-  $handler->display->display_options['fields']['moderation_actions']['label'] = 'Moderate';
+  $handler->display->display_options['fields']['moderation_actions']['label'] = 'Change Moderation State';
   $handler->display->display_options['fields']['moderation_actions']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['moderation_actions']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['moderation_actions']['alter']['absolute'] = 0;
