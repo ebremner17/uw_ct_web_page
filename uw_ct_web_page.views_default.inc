@@ -196,10 +196,14 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['name']['label'] = 'Revised by';
+  $handler->display->display_options['fields']['name']['label'] = 'Last updated by';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = 1;
   $handler->display->display_options['fields']['name']['alter']['strip_tags'] = 0;
@@ -209,8 +213,10 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['name']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['name']['hide_empty'] = 0;
   $handler->display->display_options['fields']['name']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['name']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['name']['link_to_user'] = 1;
   $handler->display->display_options['fields']['name']['overwrite_anonymous'] = 0;
+  $handler->display->display_options['fields']['name']['format_username'] = 1;
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
@@ -251,23 +257,6 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['status']['empty_zero'] = 0;
   $handler->display->display_options['fields']['status']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Content revision: Log message */
-  $handler->display->display_options['fields']['log']['id'] = 'log';
-  $handler->display->display_options['fields']['log']['table'] = 'node_revision';
-  $handler->display->display_options['fields']['log']['field'] = 'log';
-  $handler->display->display_options['fields']['log']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['log']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['log']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['log']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['log']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['log']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['log']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['log']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['log']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['log']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['log']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['log']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['log']['empty_zero'] = 0;
   /* Field: Workbench Moderation: Moderation History Link */
   $handler->display->display_options['fields']['workbench_moderation_history_link']['id'] = 'workbench_moderation_history_link';
   $handler->display->display_options['fields']['workbench_moderation_history_link']['table'] = 'node';
@@ -290,55 +279,12 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['workbench_moderation_history_link']['hide_empty'] = 0;
   $handler->display->display_options['fields']['workbench_moderation_history_link']['empty_zero'] = 0;
   $handler->display->display_options['fields']['workbench_moderation_history_link']['hide_alter_empty'] = 0;
-  /* Field: Moderation State */
-  $handler->display->display_options['fields']['state']['id'] = 'state';
-  $handler->display->display_options['fields']['state']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['fields']['state']['field'] = 'state';
-  $handler->display->display_options['fields']['state']['ui_name'] = 'Moderation State';
-  $handler->display->display_options['fields']['state']['label'] = 'Current Moderation State';
-  $handler->display->display_options['fields']['state']['alter']['alter_text'] = 1;
-  $handler->display->display_options['fields']['state']['alter']['text'] = '<div>[state]</div><div>[workbench_moderation_history_link]</div>';
-  $handler->display->display_options['fields']['state']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['state']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['state']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['state']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['state']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['state']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['state']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['state']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['state']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['state']['link_to_node'] = 0;
-  $handler->display->display_options['fields']['state']['machine_name'] = 0;
-  /* Field: Workbench Moderation: Moderation Links */
-  $handler->display->display_options['fields']['moderation_actions']['id'] = 'moderation_actions';
-  $handler->display->display_options['fields']['moderation_actions']['table'] = 'workbench_moderation_node_history';
-  $handler->display->display_options['fields']['moderation_actions']['field'] = 'moderation_actions';
-  $handler->display->display_options['fields']['moderation_actions']['label'] = 'Change Moderation State';
-  $handler->display->display_options['fields']['moderation_actions']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['moderation_actions']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['moderation_actions']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['moderation_actions']['empty_zero'] = 0;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="links"><li><a href="/node/[nid_1]">View</a></li><li><a href="/node/[nid_1]/edit">Edit</a></li><li><a href="/node/[nid_1]/moderation">View moderation history</a></li></ul>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="links"><li><a href="/node/[nid_1]">View</a></li><li><a href="/node/[nid_1]/edit">Create/edit new revision</a></li><li><a href="/node/[nid_1]/moderation">View moderation history</a></li></ul>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
@@ -477,18 +423,6 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['required'] = 0;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 'All';
-  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
-  $handler->display->display_options['filters']['status']['expose']['use_operator'] = FALSE;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
-  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
-  $handler->display->display_options['filters']['status']['expose']['multiple'] = FALSE;
   /* Filter criterion: User: Name */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
@@ -502,6 +436,18 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
   $handler->display->display_options['filters']['uid']['expose']['multiple'] = FALSE;
   $handler->display->display_options['filters']['uid']['expose']['reduce'] = 0;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 'All';
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status']['expose']['use_operator'] = FALSE;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['multiple'] = FALSE;
   $handler->display->display_options['path'] = 'admin/workbench/create/web-pages';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Web pages';
