@@ -242,7 +242,7 @@ function uw_ct_web_page_field_default_fields() {
             ),
           ),
           'insert' => 1,
-          'insert_class' => '',
+          'insert_class' => 'image-left',
           'insert_default' => 'auto',
           'insert_styles' => array(
             'auto' => 0,
@@ -348,7 +348,7 @@ function uw_ct_web_page_field_default_fields() {
             ),
           ),
           'insert' => 1,
-          'insert_class' => '',
+          'insert_class' => 'image-left',
           'insert_default' => 'image',
           'insert_styles' => array(
             'auto' => 0,
