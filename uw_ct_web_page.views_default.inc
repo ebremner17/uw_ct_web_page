@@ -39,7 +39,6 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '10, 25, 50, 100, 200';
   $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['group_rendered'] = 1;
   $handler->display->display_options['style_options']['columns'] = array(
     'nid_1' => 'nid_1',
     'title' => 'title',
@@ -175,7 +174,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nid_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nid_1']['hide_alter_empty'] = 1;
-  $handler->display->display_options['fields']['nid_1']['link_to_node'] = 1;
+  $handler->display->display_options['fields']['nid_1']['link_to_node'] = 0;
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -289,31 +288,145 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['status']['empty_zero'] = 0;
   $handler->display->display_options['fields']['status']['hide_alter_empty'] = 1;
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = 'Actions';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<ul class="links"><li><a href="[path]">View</a></li><li><a href="../../../node/[nid_1]/edit">Create/edit draft</a></li><li><a href="../../../node/[nid_1]/moderation">Moderate</a></li></ul>';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = 1;
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
+  /* Field: View */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'View';
+  $handler->display->display_options['fields']['nothing_3']['label'] = 'View';
+  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'View';
+  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'node/[nid_1]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['alt'] = 'View ';
+  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'manage-actions-view';
+  $handler->display->display_options['fields']['nothing_3']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_3']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_3']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_3']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_3']['hide_alter_empty'] = 0;
+  /* Field: Create/edit draft */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Create/edit draft';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Create/edit draft';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Create/edit draft';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/[nid_1]/edit';
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['alt'] = 'Create/edit draft ';
+  $handler->display->display_options['fields']['nothing_1']['alter']['link_class'] = 'manage-actions-edit';
+  $handler->display->display_options['fields']['nothing_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = 0;
+  /* Field: Moderate */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Moderate';
+  $handler->display->display_options['fields']['nothing_2']['label'] = 'Moderate';
+  $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Moderate';
+  $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid_1]/moderate';
+  $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['alt'] = 'Moderate ';
+  $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'manage-actions-moderate';
+  $handler->display->display_options['fields']['nothing_2']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_2']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_2']['hide_alter_empty'] = 0;
+  /* Field: Clone */
+  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
+  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'Clone';
+  $handler->display->display_options['fields']['nothing_4']['label'] = 'Clone';
+  $handler->display->display_options['fields']['nothing_4']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = 'Clone';
+  $handler->display->display_options['fields']['nothing_4']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['nothing_4']['alter']['path'] = 'node/[nid_1]/clone';
+  $handler->display->display_options['fields']['nothing_4']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['alt'] = 'Clone ';
+  $handler->display->display_options['fields']['nothing_4']['alter']['link_class'] = 'manage-actions-clone';
+  $handler->display->display_options['fields']['nothing_4']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_4']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_4']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing_4']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_4']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_4']['hide_alter_empty'] = 0;
+  /* Field: Actions */
+  $handler->display->display_options['fields']['nothing_5']['id'] = 'nothing_5';
+  $handler->display->display_options['fields']['nothing_5']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_5']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_5']['ui_name'] = 'Actions';
+  $handler->display->display_options['fields']['nothing_5']['label'] = 'Actions';
+  $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '<ul class="links manage-actions">
+  <li>[nothing_3]</li>
+  <li>[nothing_1]</li>
+  <li>[nothing_2]</li>
+  <li>[nothing_4]</li>
+</ul>';
+  $handler->display->display_options['fields']['nothing_5']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_5']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_5']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['nothing_5']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_5']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_5']['hide_alter_empty'] = 0;
   $handler->display->display_options['filter_groups']['groups'] = array(
-    0 => 'AND',
-    1 => 'OR',
+    1 => 'AND',
+    2 => 'OR',
   );
   /* Filter criterion: User: Current */
   $handler->display->display_options['filters']['uid_current']['id'] = 'uid_current';
@@ -321,11 +434,13 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
+  $handler->display->display_options['filters']['uid_current']['group'] = 1;
   /* Filter criterion: Content: Title */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
@@ -337,6 +452,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
@@ -355,6 +471,7 @@ function uw_ct_web_page_views_default_views() {
     'needs_review' => 'needs_review',
     'published' => 'published',
   );
+  $handler->display->display_options['filters']['state']['group'] = 1;
   $handler->display->display_options['filters']['state']['exposed'] = TRUE;
   $handler->display->display_options['filters']['state']['expose']['operator_id'] = 'state_op';
   $handler->display->display_options['filters']['state']['expose']['label'] = 'State';
@@ -366,6 +483,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['current']['id'] = 'current';
   $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['current']['field'] = 'current';
+  $handler->display->display_options['filters']['current']['group'] = 1;
 
   /* Display: Manage Web Pages */
   $handler = $view->new_display('page', 'Manage Web Pages', 'manage_web_pages');
@@ -395,7 +513,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['current']['table'] = 'workbench_moderation_node_history';
   $handler->display->display_options['filters']['current']['field'] = 'current';
   $handler->display->display_options['filters']['current']['value'] = '1';
-  $handler->display->display_options['filters']['current']['group'] = 0;
+  $handler->display->display_options['filters']['current']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -403,7 +521,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'uw_web_page' => 'uw_web_page',
   );
-  $handler->display->display_options['filters']['type']['group'] = 0;
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['use_operator'] = FALSE;
@@ -416,7 +534,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 0;
+  $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
@@ -429,7 +547,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
   $handler->display->display_options['filters']['uid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid']['value'] = '';
-  $handler->display->display_options['filters']['uid']['group'] = 0;
+  $handler->display->display_options['filters']['uid']['group'] = 1;
   $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
   $handler->display->display_options['filters']['uid']['expose']['label'] = 'Last updated by';
@@ -442,7 +560,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 'All';
-  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
@@ -458,7 +576,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['state']['value'] = array(
     'archived' => 'archived',
   );
-  $handler->display->display_options['filters']['state']['group'] = 1;
+  $handler->display->display_options['filters']['state']['group'] = 2;
   $handler->display->display_options['filters']['state']['expose']['label'] = 'Workbench Moderation: State';
   $handler->display->display_options['filters']['state']['expose']['use_operator'] = FALSE;
   $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
@@ -469,7 +587,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
-  $handler->display->display_options['filters']['status_1']['group'] = 1;
+  $handler->display->display_options['filters']['status_1']['group'] = 2;
   $handler->display->display_options['path'] = 'admin/workbench/create/web-pages';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Web pages';
