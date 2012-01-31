@@ -64,7 +64,7 @@ function uw_ct_web_page_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
         'display_summary' => TRUE,
         'text_processing' => 1,
