@@ -97,7 +97,7 @@ function uw_ct_web_page_node_info() {
       'base' => 'node_content',
       'description' => t('Web pages have main and sidebar content areas, as well as related links.'),
       'has_title' => '1',
-      'title_label' => t('Heading (required)'),
+      'title_label' => t('Heading'),
       'help' => '',
     ),
   );
