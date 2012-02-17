@@ -20,6 +20,9 @@ function uw_ct_web_page_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -91,6 +94,9 @@ function uw_ct_web_page_field_default_fields() {
       'description' => 'Intended audiences',
       'entity_types' => array(),
       'field_name' => 'field_audience',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -169,6 +175,9 @@ function uw_ct_web_page_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_file',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -274,6 +283,9 @@ function uw_ct_web_page_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'fid' => array(
           'columns' => array(
@@ -382,6 +394,9 @@ function uw_ct_web_page_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_related_link',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'module' => 'link',
@@ -463,6 +478,9 @@ function uw_ct_web_page_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_sidebar_content',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
