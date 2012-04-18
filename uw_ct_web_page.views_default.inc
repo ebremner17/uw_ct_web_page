@@ -220,7 +220,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Moderate';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid_1]/moderate';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid_1]/moderation';
   $handler->display->display_options['fields']['nothing_2']['alter']['alt'] = 'Moderate ';
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'manage-actions-moderate';
   /* Field: Clone */
