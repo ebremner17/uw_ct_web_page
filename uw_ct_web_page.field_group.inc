@@ -48,14 +48,14 @@ function uw_ct_web_page_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Sidebar complimentary content',
+    'label' => 'Sidebar complementary content',
     'weight' => '2',
     'children' => array(
       0 => 'field_sidebar_content',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Sidebar complimentary content',
+      'label' => 'Sidebar complementary content',
       'instance_settings' => array(
         'required_fields' => 0,
         'classes' => '',

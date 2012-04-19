@@ -527,7 +527,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_sidebar_content',
-      'label' => 'Add complimentary content',
+      'label' => 'Add complementary content',
       'required' => 0,
       'settings' => array(
         'text_processing' => '1',
@@ -548,7 +548,7 @@ function uw_ct_web_page_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add additional links related to content on this web page.');
-  t('Add complimentary content');
+  t('Add complementary content');
   t('Add related links');
   t('Audience');
   t('Body');
