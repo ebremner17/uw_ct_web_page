@@ -29,17 +29,17 @@ function uw_ct_web_page_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'uw_ct_web_page-uw_sidebar_block' => array(
-          'module' => 'uw_ct_web_page',
-          'delta' => 'uw_sidebar_block',
-          'region' => 'sidebar_second',
-          'weight' => '-16',
-        ),
         'uw_ct_web_page-uw_sidebar_related_links' => array(
           'module' => 'uw_ct_web_page',
           'delta' => 'uw_sidebar_related_links',
           'region' => 'sidebar_second',
           'weight' => '-15',
+        ),
+        'uw_ct_web_page-uw_sidebar_block' => array(
+          'module' => 'uw_ct_web_page',
+          'delta' => 'uw_sidebar_block',
+          'region' => 'sidebar_second',
+          'weight' => '-16',
         ),
       ),
     ),
