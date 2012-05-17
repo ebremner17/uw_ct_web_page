@@ -54,6 +54,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -136,6 +142,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 6,
         ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -214,6 +226,12 @@ function uw_ct_web_page_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
+        ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -323,6 +341,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -336,12 +360,14 @@ function uw_ct_web_page_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
+        'alt_field_required' => 0,
         'file_directory' => 'uploads/images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
         'max_resolution' => '3000x3000',
         'min_resolution' => '10x10',
         'title_field' => 0,
+        'title_field_required' => 0,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -437,6 +463,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => '5',
         ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -517,6 +549,12 @@ function uw_ct_web_page_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
+        ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
