@@ -1,0 +1,135 @@
+<?php
+/**
+ * @file
+ * Code for the uWaterloo Content Type Web Page feature.
+ */
+
+include_once('uw_ct_web_page.features.inc');
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * FORM_ID = uw_web_page_node_form (node add/edit form)
+ */
+function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
+
+  $sidebar = $form['#groups']['group_sidebar'];
+  $language = $form['language']['#value'];
+
+  // We expand the sidebar field group if any of its fields contain content
+  foreach ($sidebar -> children as $field) {
+    if (!empty($form[$field][$language][0]['#default_value'])) {
+      $sidebar -> format_settings['formatter'] = 'collapsible';
+      break;
+    }
+  }
+
+}
+
+
+/**
+ * Implements hook_page_build().
+ *
+ * Add the breadcrumbs for the management view
+ */
+function uw_ct_web_page_page_build() {
+  $path = current_path();
+
+  if ($path == 'admin/workbench/manage/web-pages') {
+    $breadcrumb = drupal_get_breadcrumb();
+    $breadcrumb[1] = l('Administration', 'admin');
+    $breadcrumb[2] = l('My Workbench', 'admin/workbench');
+    $breadcrumb[3] = l('Create/Manage Content', 'admin/workbench/create');
+    drupal_set_breadcrumb($breadcrumb);
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function uw_ct_web_page_block_info() {
+  // These blocks change depending on the page being viewed, so we cache per page (instead of the default per role)
+  $blocks['uw_sidebar_block'] = array(
+    'info' => t('uWaterloo Sidebar Content'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['uw_sidebar_related_links'] = array(
+    'info' => t('uWaterloo Sidebar Related Links'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function uw_ct_web_page_block_view($delta = '') {
+  //The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'uw_sidebar_block':
+      // no title $block['subject'] = t('');
+      $block['content'] = uw_ct_web_page_sidebar_content('field_sidebar_content', array('field_sidebar_content_value'));
+      break;
+    case 'uw_sidebar_related_links':
+      $block['subject'] = t('Related Links');
+      $block['content'] = uw_ct_web_page_sidebar_content('field_related_link', array('field_related_link_url', 'field_related_link_title'));
+      break;
+  }
+  return $block;
+}
+
+function uw_ct_web_page_sidebar_content($field, $cols) {
+  if (arg(0) === 'node') {
+    $params = array('nid' => intval(arg(1)));
+
+    switch (arg(2)) {
+      case 'revisions':
+        $revision_id = ':revision_id';
+        $params['revision_id'] = intval(arg(3));
+        break;
+      case 'draft':
+        $revision_id = "(SELECT MAX(revision_id) FROM {field_revision_field_sidebar_content} WHERE entity_id = :nid)";
+        break;
+      default:
+        $revision_id = "(SELECT vid FROM {node} WHERE nid = :nid)";
+    }
+
+    $sql = "SELECT " . implode(', ', $cols) . "
+      FROM (
+        SELECT * FROM {field_data_$field}
+      UNION
+        SELECT * FROM {field_revision_$field}
+      ) AS combined
+      WHERE (bundle = 'uw_web_page')
+        AND (revision_id = $revision_id)
+        AND (entity_id = :nid)";
+    foreach ($cols as $col) {
+      $sql .= " AND ($col IS NOT NULL)";
+    }
+    $sql .= " ORDER BY delta";
+
+    $result = db_query($sql, $params);
+
+    $output = '';
+
+    switch ($field) {
+      case 'field_sidebar_content':
+        foreach ($result as $record) {
+          $output .= $record->field_sidebar_content_value;
+        }
+        break;
+      case 'field_related_link':
+        $output = array();
+        foreach ($result as $record) {
+          $output[] = l($record->field_related_link_title, $record->field_related_link_url);
+        }
+        if ($output) {
+          $output = '<ul><li>' . implode('</li><li>', $output) . '</li></ul>';
+        }
+        break;
+    }
+
+    if ($output) {
+      return array('#markup' => check_markup($output, 'uw_tf_standard_sidebar'));
+    }
+  }
+}
