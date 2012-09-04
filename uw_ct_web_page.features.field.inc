@@ -10,7 +10,7 @@
 function uw_ct_web_page_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-uw_web_page-body'
+  // Exported field: 'node-uw_web_page-body'.
   $fields['node-uw_web_page-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -36,6 +36,7 @@ function uw_ct_web_page_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',
@@ -91,7 +92,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_audience'
+  // Exported field: 'node-uw_web_page-field_audience'.
   $fields['node-uw_web_page-field_audience'] = array(
     'field_config' => array(
       'active' => '1',
@@ -117,6 +118,7 @@ function uw_ct_web_page_field_default_fields() {
         ),
       ),
       'label' => 'Audiences',
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -182,7 +184,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_file'
+  // Exported field: 'node-uw_web_page-field_file'.
   $fields['node-uw_web_page-field_file'] = array(
     'field_config' => array(
       'active' => '1',
@@ -206,6 +208,7 @@ function uw_ct_web_page_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -298,7 +301,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_image'
+  // Exported field: 'node-uw_web_page-field_image'.
   $fields['node-uw_web_page-field_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -322,6 +325,7 @@ function uw_ct_web_page_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -361,6 +365,7 @@ function uw_ct_web_page_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'alt_field_required' => 0,
+        'default_image' => 0,
         'file_directory' => 'uploads/images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
@@ -419,7 +424,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_related_link'
+  // Exported field: 'node-uw_web_page-field_related_link'.
   $fields['node-uw_web_page-field_related_link'] = array(
     'field_config' => array(
       'active' => '1',
@@ -432,6 +437,7 @@ function uw_ct_web_page_field_default_fields() {
       ),
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -509,7 +515,7 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-uw_web_page-field_sidebar_content'
+  // Exported field: 'node-uw_web_page-field_sidebar_content'.
   $fields['node-uw_web_page-field_sidebar_content'] = array(
     'field_config' => array(
       'active' => '1',
@@ -533,6 +539,7 @@ function uw_ct_web_page_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '1',

@@ -35,7 +35,7 @@ function uw_ct_web_page_views_api() {
 function uw_ct_web_page_image_default_styles() {
   $styles = array();
 
-  // Exported image style: body-500px-wide
+  // Exported image style: body-500px-wide.
   $styles['body-500px-wide'] = array(
     'name' => 'body-500px-wide',
     'effects' => array(
@@ -58,7 +58,7 @@ function uw_ct_web_page_image_default_styles() {
     ),
   );
 
-  // Exported image style: sidebar-220px-wide
+  // Exported image style: sidebar-220px-wide.
   $styles['sidebar-220px-wide'] = array(
     'name' => 'sidebar-220px-wide',
     'effects' => array(
