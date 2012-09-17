@@ -34,6 +34,17 @@ function uw_ct_web_page_install() {
   variable_set('node_options_uw_web_page', array(0 => 'moderation', 1 => 'revision'));
 }
 
+/**
+ * Implements hook_update_N().
+ */
+
+/**
+ * Enabling contrib module: conditional_fields
+ */
+function uw_ct_web_page_update_7100() {
+  $modules = array('conditional_fields');
+  module_enable($modules);
+}
 
 /**
  * Implements hook_uninstall().

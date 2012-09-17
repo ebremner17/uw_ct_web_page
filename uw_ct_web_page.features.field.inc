@@ -53,7 +53,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -87,7 +87,7 @@ function uw_ct_web_page_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -139,10 +139,9 @@ function uw_ct_web_page_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 6,
+          'weight' => '6',
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -179,7 +178,7 @@ function uw_ct_web_page_field_default_fields() {
           'track_list' => 0,
         ),
         'type' => 'term_reference_tree',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -225,7 +224,6 @@ function uw_ct_web_page_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'file',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
@@ -343,7 +341,7 @@ function uw_ct_web_page_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -408,9 +406,11 @@ function uw_ct_web_page_field_default_fields() {
             'image_image_gallery_slide' => 0,
             'image_large' => 0,
             'image_medium' => 0,
+            'image_person-profile-list' => 0,
             'image_profile-photo-block' => 0,
             'image_sidebar-220px-wide' => 'image_sidebar-220px-wide',
             'image_thumbnail' => 0,
+            'image_wide-body-750px-wide' => 'image_wide-body-750px-wide',
             'link' => 0,
           ),
           'insert_width' => '500',
@@ -555,7 +555,7 @@ function uw_ct_web_page_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -590,6 +590,83 @@ function uw_ct_web_page_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-uw_web_page-field_wide'.
+  $fields['node-uw_web_page-field_wide'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_wide',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_wide',
+      'label' => 'Wide Page Width',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add additional links related to content on this web page.');
@@ -599,6 +676,8 @@ function uw_ct_web_page_field_default_fields() {
   t('Body');
   t('Choose a file');
   t('Choose an image');
+  t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
+  t('Wide Page Width');
 
   return $fields;
 }

@@ -23,8 +23,14 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
     }
   }
 
+  //load JavaScript to make wide pages handling cleaner
+  $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
 }
 
+function uw_ct_web_page_wide_handler($element) {
+  drupal_add_js(drupal_get_path('module', 'uw_ct_web_page') . '/uw_ct_web_page.js');
+  return($element);
+}
 
 /**
  * Implements hook_page_build().
