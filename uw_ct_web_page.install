@@ -47,6 +47,14 @@ function uw_ct_web_page_update_7100() {
 }
 
 /**
+ * Enabling contrib module: markup
+ */
+function uw_ct_web_page_update_7101() {
+  $modules = array('markup');
+  module_enable($modules);
+}
+
+/**
  * Implements hook_uninstall().
  */
 function uw_ct_web_page_uninstall() {

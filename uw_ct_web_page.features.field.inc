@@ -510,7 +510,7 @@ function uw_ct_web_page_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '8',
+        'weight' => '14',
       ),
     ),
   );
@@ -585,7 +585,141 @@ function uw_ct_web_page_field_default_fields() {
           'rows' => '10',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-uw_web_page-field_sidebar_note_content'.
+  $fields['node-uw_web_page-field_sidebar_note_content'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidebar_note_content',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'markup',
+      'settings' => array(
+        'markup' => array(
+          'format' => 'uw_tf_standard',
+          'value' => '<p>When wide page width is enabled, sidebar complementary content will not appear on this page.</p>
+',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'markup',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'markup',
+          'settings' => array(),
+          'type' => 'markup_default',
+          'weight' => 7,
+        ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_sidebar_note_content',
+      'label' => 'Note for wide web pages',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'markup',
+        'settings' => array(),
+        'type' => 'markup',
+        'weight' => '11',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-uw_web_page-field_sidebar_note_content_links'.
+  $fields['node-uw_web_page-field_sidebar_note_content_links'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidebar_note_content_links',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'markup',
+      'settings' => array(
+        'markup' => array(
+          'format' => 'uw_tf_standard',
+          'value' => '<p>When wide page width is enabled, sidebar related links will not appear on this page.</p>
+',
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'markup',
+    ),
+    'field_instance' => array(
+      'bundle' => 'uw_web_page',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'markup',
+          'settings' => array(),
+          'type' => 'markup_default',
+          'weight' => 8,
+        ),
+        'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_sidebar_note_content_links',
+      'label' => 'Note for wide web pages (links)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'markup',
+        'settings' => array(),
+        'type' => 'markup',
+        'weight' => '13',
       ),
     ),
   );
@@ -676,6 +810,8 @@ function uw_ct_web_page_field_default_fields() {
   t('Body');
   t('Choose a file');
   t('Choose an image');
+  t('Note for wide web pages');
+  t('Note for wide web pages (links)');
   t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
   t('Wide Page Width');
 

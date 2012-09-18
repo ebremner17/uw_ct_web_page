@@ -24,6 +24,7 @@ function uw_ct_web_page_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_related_link',
+      1 => 'field_sidebar_note_content_links',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -52,6 +53,7 @@ function uw_ct_web_page_field_group_info() {
     'weight' => '3',
     'children' => array(
       0 => 'field_sidebar_content',
+      1 => 'field_sidebar_note_content',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
