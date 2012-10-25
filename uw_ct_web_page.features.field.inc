@@ -61,6 +61,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -127,6 +133,7 @@ function uw_ct_web_page_field_default_fields() {
             'vocabulary' => 'uwaterloo_audience',
           ),
         ),
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -144,6 +151,12 @@ function uw_ct_web_page_field_default_fields() {
           'weight' => '6',
         ),
         'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'ical' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -234,6 +247,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -273,6 +292,7 @@ function uw_ct_web_page_field_default_fields() {
             ),
           ),
           'insert' => 1,
+          'insert_absolute' => FALSE,
           'insert_class' => '',
           'insert_default' => 'auto',
           'insert_styles' => array(
@@ -349,6 +369,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -394,6 +420,7 @@ function uw_ct_web_page_field_default_fields() {
             ),
           ),
           'insert' => 1,
+          'insert_absolute' => FALSE,
           'insert_class' => '',
           'insert_default' => 'image',
           'insert_styles' => array(
@@ -470,6 +497,12 @@ function uw_ct_web_page_field_default_fields() {
           'weight' => '5',
         ),
         'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'ical' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -563,6 +596,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -633,6 +672,12 @@ function uw_ct_web_page_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -695,6 +740,12 @@ function uw_ct_web_page_field_default_fields() {
           'weight' => 8,
         ),
         'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'ical' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -770,6 +821,12 @@ function uw_ct_web_page_field_default_fields() {
           'weight' => '1',
         ),
         'entity_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'ical' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
