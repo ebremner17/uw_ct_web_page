@@ -139,3 +139,32 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
     }
   }
 }
+
+/**
+ * implements hook_element_info_alter
+ */
+function uw_ct_web_page_element_info_alter(&$type) {
+  if (isset($type['link_field'])) {
+    $type['link_field']['#process'][] = 'uw_ct_web_page_link_field_process';
+  }
+}
+
+/**
+ * Process the link type element before displaying the field.
+ *
+ * Build the form element. When creating a form using FAPI #process,
+ * note that $element['#value'] is already set.
+ *
+ * The $fields array is in $complete_form['#field_info'][$element['#field_name']].
+ */
+function uw_ct_web_page_link_field_process($element, $form_state, $complete_form) {
+  switch ($element['#field_name']) {
+  
+    case 'field_related_link':
+      $element['title']['#title'] = t('Link text');
+      $element['url']['#title'] = t('URL');
+      $element['title']['#description'] = t('The link text is limited to '. $element['title']['#maxlength'].' characters maximum.');
+      break;
+  }
+  return $element;
+}
