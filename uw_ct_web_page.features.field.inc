@@ -83,6 +83,7 @@ function uw_ct_web_page_field_default_fields() {
       'required' => 1,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -174,6 +175,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Audience',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -266,6 +268,7 @@ function uw_ct_web_page_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'description_field' => 1,
+        'exclude_cv' => FALSE,
         'file_directory' => 'uploads/files',
         'file_extensions' => 'csv doc docx gz mp3 rtf pdf ppt pptx psd tar txt wav xls xlsx zip',
         'max_filesize' => '25 MB',
@@ -383,6 +386,7 @@ function uw_ct_web_page_field_default_fields() {
         ),
       ),
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_image',
       'label' => 'Choose an image',
       'required' => 0,
@@ -390,6 +394,7 @@ function uw_ct_web_page_field_default_fields() {
         'alt_field' => 0,
         'alt_field_required' => 0,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'uploads/images',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '10 MB',
@@ -415,16 +420,20 @@ function uw_ct_web_page_field_default_fields() {
               'attach_mode' => 'copy',
               'path' => 'file_attach',
             ),
+            'source_imce' => array(
+              'imce_mode' => '0',
+            ),
             'source_reference' => array(
               'autocomplete' => '1',
             ),
           ),
           'insert' => 1,
-          'insert_absolute' => FALSE,
+          'insert_absolute' => 0,
           'insert_class' => '',
-          'insert_default' => 'image',
+          'insert_default' => 'image_body-500px-wide',
           'insert_styles' => array(
             'auto' => 0,
+            'icon_link' => 0,
             'image' => 'image',
             'image_banner-750w' => 0,
             'image_body-500px-wide' => 'image_body-500px-wide',
@@ -440,7 +449,7 @@ function uw_ct_web_page_field_default_fields() {
             'image_wide-body-750px-wide' => 'image_wide-body-750px-wide',
             'link' => 0,
           ),
-          'insert_width' => '500',
+          'insert_width' => '750',
           'preview_image_style' => 'thumbnail',
           'progress_indicator' => 'throbber',
         ),
@@ -531,6 +540,7 @@ function uw_ct_web_page_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'title' => 'required',
         'title_maxlength' => 128,
         'title_value' => '',
@@ -614,6 +624,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Add complementary content',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -690,6 +701,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Note for wide web pages',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -763,6 +775,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Note for wide web pages (links)',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -844,6 +857,7 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Wide Page Width',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
