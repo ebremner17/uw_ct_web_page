@@ -44,7 +44,12 @@ function uw_ct_web_page_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'uw_web_page',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'format' => 'uw_tf_standard',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -82,15 +87,61 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Body',
       'required' => 1,
       'settings' => array(
-        'display_summary' => TRUE,
-        'exclude_cv' => FALSE,
-        'text_processing' => 1,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'full_html' => 'full_html',
+            'php_code' => 0,
+            'plain_text' => 0,
+            'uw_tf_basic' => 0,
+            'uw_tf_contact' => 0,
+            'uw_tf_standard' => 'uw_tf_standard',
+            'uw_tf_standard_sidebar' => 0,
+            'uw_tf_standard_site_footer' => 0,
+            'uw_tf_standard_wide' => 'uw_tf_standard_wide',
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'full_html' => array(
+                'weight' => '-6',
+              ),
+              'php_code' => array(
+                'weight' => '11',
+              ),
+              'plain_text' => array(
+                'weight' => '10',
+              ),
+              'uw_tf_basic' => array(
+                'weight' => '0',
+              ),
+              'uw_tf_contact' => array(
+                'weight' => '-5',
+              ),
+              'uw_tf_standard' => array(
+                'weight' => '-10',
+              ),
+              'uw_tf_standard_sidebar' => array(
+                'weight' => '-8',
+              ),
+              'uw_tf_standard_site_footer' => array(
+                'weight' => '-7',
+              ),
+              'uw_tf_standard_wide' => array(
+                'weight' => '-9',
+              ),
+            ),
+          ),
+        ),
+        'display_summary' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -597,7 +648,11 @@ function uw_ct_web_page_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'uw_web_page',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'format' => 'uw_tf_standard_sidebar',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -631,7 +686,52 @@ function uw_ct_web_page_field_default_fields() {
       'label' => 'Add complementary content',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'full_html' => 'full_html',
+            'php_code' => 0,
+            'plain_text' => 0,
+            'uw_tf_basic' => 0,
+            'uw_tf_contact' => 0,
+            'uw_tf_standard' => 0,
+            'uw_tf_standard_sidebar' => 'uw_tf_standard_sidebar',
+            'uw_tf_standard_site_footer' => 0,
+            'uw_tf_standard_wide' => 0,
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'full_html' => array(
+                'weight' => '-6',
+              ),
+              'php_code' => array(
+                'weight' => '11',
+              ),
+              'plain_text' => array(
+                'weight' => '10',
+              ),
+              'uw_tf_basic' => array(
+                'weight' => '0',
+              ),
+              'uw_tf_contact' => array(
+                'weight' => '-5',
+              ),
+              'uw_tf_standard' => array(
+                'weight' => '-10',
+              ),
+              'uw_tf_standard_sidebar' => array(
+                'weight' => '-8',
+              ),
+              'uw_tf_standard_site_footer' => array(
+                'weight' => '-7',
+              ),
+              'uw_tf_standard_wide' => array(
+                'weight' => '-9',
+              ),
+            ),
+          ),
+        ),
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -682,7 +782,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'markup',
           'settings' => array(),
           'type' => 'markup_default',
-          'weight' => 7,
+          'weight' => '7',
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -756,7 +856,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'markup',
           'settings' => array(),
           'type' => 'markup_default',
-          'weight' => 8,
+          'weight' => '8',
         ),
         'entity_teaser' => array(
           'label' => 'above',
