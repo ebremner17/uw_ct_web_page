@@ -782,7 +782,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'markup',
           'settings' => array(),
           'type' => 'markup_default',
-          'weight' => '7',
+          'weight' => 7,
         ),
         'entity_teaser' => array(
           'label' => 'above',
@@ -856,7 +856,7 @@ function uw_ct_web_page_field_default_fields() {
           'module' => 'markup',
           'settings' => array(),
           'type' => 'markup_default',
-          'weight' => '8',
+          'weight' => 8,
         ),
         'entity_teaser' => array(
           'label' => 'above',
