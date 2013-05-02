@@ -26,7 +26,7 @@ function uw_ct_web_page_ctools_plugin_api() {
  * Implements hook_views_api().
  */
 function uw_ct_web_page_views_api() {
-  return array("version" => "3.0");
+  return array("api" => "3.0");
 }
 
 /**
@@ -49,11 +49,11 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '500',
+          'width' => 500,
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -72,11 +72,11 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '220',
+          'width' => 220,
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
@@ -95,11 +95,11 @@ function uw_ct_web_page_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '750',
+          'width' => 750,
           'height' => '',
           'upscale' => 1,
         ),
-        'weight' => '1',
+        'weight' => 1,
       ),
     ),
   );
