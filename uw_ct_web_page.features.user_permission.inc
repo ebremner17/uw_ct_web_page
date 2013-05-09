@@ -84,6 +84,33 @@ function uw_ct_web_page_user_default_permissions() {
     'module' => 'override_node_options',
   );
 
+  // Exported permission: override uw_web_page authored by option.
+  $permissions['override uw_web_page authored by option'] = array(
+    'name' => 'override uw_web_page authored by option',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override uw_web_page authored on option.
+  $permissions['override uw_web_page authored on option'] = array(
+    'name' => 'override uw_web_page authored on option',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override uw_web_page promote to front page option.
+  $permissions['override uw_web_page promote to front page option'] = array(
+    'name' => 'override uw_web_page promote to front page option',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'override_node_options',
+  );
+
   // Exported permission: override uw_web_page published option.
   $permissions['override uw_web_page published option'] = array(
     'name' => 'override uw_web_page published option',
@@ -106,6 +133,15 @@ function uw_ct_web_page_user_default_permissions() {
       'content author' => 'content author',
       'content editor' => 'content editor',
       'site manager' => 'site manager',
+    ),
+    'module' => 'override_node_options',
+  );
+
+  // Exported permission: override uw_web_page sticky option.
+  $permissions['override uw_web_page sticky option'] = array(
+    'name' => 'override uw_web_page sticky option',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'override_node_options',
   );
