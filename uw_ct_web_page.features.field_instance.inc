@@ -215,7 +215,6 @@ function uw_ct_web_page_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
-      'exclude_cv' => FALSE,
       'file_directory' => 'uploads/files',
       'file_extensions' => 'csv doc docx gz mp3 rtf pdf pot potx pps ppt pptx psd r tar tex txt wav xls xlsx zip',
       'max_filesize' => '25 MB',
@@ -228,9 +227,11 @@ function uw_ct_web_page_field_default_field_instances() {
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
+            'clipboard' => 0,
             'imce' => 'imce',
             'reference' => 'reference',
             'remote' => 'remote',
+            'upload' => 'upload',
           ),
           'source_attach' => array(
             'absolute' => 0,
@@ -238,10 +239,11 @@ function uw_ct_web_page_field_default_field_instances() {
             'path' => 'file_attach',
           ),
           'source_imce' => array(
-            'imce_mode' => 0,
+            'imce_mode' => 1,
           ),
           'source_reference' => array(
             'autocomplete' => 1,
+            'search_all_fields' => 1,
           ),
         ),
         'insert' => 1,
@@ -314,7 +316,6 @@ function uw_ct_web_page_field_default_field_instances() {
       'alt_field' => 0,
       'alt_field_required' => 0,
       'default_image' => 0,
-      'exclude_cv' => FALSE,
       'file_directory' => 'uploads/images',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '10 MB',
@@ -331,9 +332,11 @@ function uw_ct_web_page_field_default_field_instances() {
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
+            'clipboard' => 0,
             'imce' => 'imce',
             'reference' => 'reference',
             'remote' => 'remote',
+            'upload' => 'upload',
           ),
           'source_attach' => array(
             'absolute' => 0,
@@ -341,10 +344,11 @@ function uw_ct_web_page_field_default_field_instances() {
             'path' => 'file_attach',
           ),
           'source_imce' => array(
-            'imce_mode' => 0,
+            'imce_mode' => 1,
           ),
           'source_reference' => array(
             'autocomplete' => 1,
+            'search_all_fields' => 1,
           ),
         ),
         'insert' => 1,
