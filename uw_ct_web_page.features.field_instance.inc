@@ -35,6 +35,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'forward' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -137,6 +143,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'forward' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -190,6 +202,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'weight' => 4,
       ),
       'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'forward' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -289,6 +307,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'weight' => 2,
       ),
       'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'forward' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -402,6 +426,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'forward' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -466,6 +496,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'weight' => 3,
       ),
       'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'forward' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -568,6 +604,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'forward' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -612,6 +654,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'weight' => 8,
       ),
       'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'forward' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -672,6 +720,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'forward' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'ical' => array(
         'label' => 'above',
         'settings' => array(),
@@ -722,6 +776,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'weight' => 1,
       ),
       'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'forward' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
