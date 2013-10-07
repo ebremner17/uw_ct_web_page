@@ -72,8 +72,8 @@ function uw_ct_web_page_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'parent' => 0,
           'vocabulary' => 'uwaterloo_audience',
+          'parent' => 0,
         ),
       ),
       'options_list_callback' => NULL,
