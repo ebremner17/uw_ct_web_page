@@ -56,6 +56,7 @@ function uw_ct_web_page_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'body-500px-wide',
   );
 
   // Exported image style: sidebar-220px-wide.
@@ -79,6 +80,7 @@ function uw_ct_web_page_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'sidebar-220px-wide',
   );
 
   // Exported image style: wide-body-750px-wide.
@@ -102,6 +104,7 @@ function uw_ct_web_page_image_default_styles() {
         'weight' => 1,
       ),
     ),
+    'label' => 'wide-body-750px-wide',
   );
 
   return $styles;
