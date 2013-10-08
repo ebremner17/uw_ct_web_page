@@ -325,6 +325,7 @@ function uw_ct_web_page_views_default_views() {
     4 => '4',
     5 => '5',
     6 => '6',
+    12 => '12',
   );
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
