@@ -55,6 +55,16 @@ function uw_ct_web_page_update_7101() {
 }
 
 /**
+ * Remove weird "weight" field
+ */
+function uw_ct_web_page_update_7102() {
+  if (field_info_field('field_weight')) {
+    field_delete_field('field_weight');
+    field_purge_batch();
+  }
+}
+
+/**
  * Implements hook_uninstall().
  */
 function uw_ct_web_page_uninstall() {
