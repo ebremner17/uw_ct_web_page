@@ -76,7 +76,7 @@ function uw_ct_web_page_block_view($delta = '') {
       $block['content'] = uw_ct_web_page_sidebar_content('field_sidebar_content', array('field_sidebar_content_value'));
       break;
     case 'uw_sidebar_related_links':
-      $block['subject'] = t('Related Links');
+      $block['subject'] = t('Related links');
       $block['content'] = uw_ct_web_page_sidebar_content('field_related_link', array('field_related_link_url', 'field_related_link_title'));
       break;
   }
