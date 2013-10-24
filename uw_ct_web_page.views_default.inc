@@ -336,6 +336,10 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = '<em>No web pages have been found matching your criteria. To add web pages, please use the link above.</em>';
   $handler->display->display_options['empty']['area']['format'] = 'uw_tf_standard';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'OR',
+    2 => 'AND',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Workbench Moderation: Current */
   $handler->display->display_options['filters']['current']['id'] = 'current';
@@ -351,7 +355,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'uw_web_page' => 'uw_web_page',
   );
-  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['group'] = 2;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
@@ -363,7 +367,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['title']['field'] = 'title';
   $handler->display->display_options['filters']['title']['relationship'] = 'vid';
   $handler->display->display_options['filters']['title']['operator'] = 'contains';
-  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['group'] = 2;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
@@ -375,7 +379,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
   $handler->display->display_options['filters']['uid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid']['value'] = '';
-  $handler->display->display_options['filters']['uid']['group'] = 1;
+  $handler->display->display_options['filters']['uid']['group'] = 2;
   $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
   $handler->display->display_options['filters']['uid']['expose']['label'] = 'Last updated by';
@@ -387,7 +391,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['relationship'] = 'vid';
   $handler->display->display_options['filters']['status']['value'] = 'All';
-  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 2;
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
   $handler->display->display_options['filters']['status']['expose']['label'] = 'Published';
@@ -401,10 +405,16 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['filters']['state']['value'] = array(
     'archived' => 'archived',
   );
-  $handler->display->display_options['filters']['state']['group'] = 1;
+  $handler->display->display_options['filters']['state']['group'] = 2;
   $handler->display->display_options['filters']['state']['expose']['label'] = 'Workbench Moderation: State';
   $handler->display->display_options['filters']['state']['expose']['operator'] = 'state_op';
   $handler->display->display_options['filters']['state']['expose']['identifier'] = 'state';
+  /* Filter criterion: Workbench Moderation: Published */
+  $handler->display->display_options['filters']['published']['id'] = 'published';
+  $handler->display->display_options['filters']['published']['table'] = 'workbench_moderation_node_history';
+  $handler->display->display_options['filters']['published']['field'] = 'published';
+  $handler->display->display_options['filters']['published']['value'] = '1';
+  $handler->display->display_options['filters']['published']['group'] = 1;
   $handler->display->display_options['path'] = 'admin/workbench/create/web-pages';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Web pages';
