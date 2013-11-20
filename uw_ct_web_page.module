@@ -23,6 +23,16 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
     }
   }
 
+  // disable sticky option
+  $form['options']['sticky']['#disabled'] = TRUE;
+  $form['options']['sticky']['#value'] = FALSE;
+  $form['options']['sticky']['#description'] = t('This content type does not use the sticky option.');
+
+  // disable front page option
+  $form['options']['promote']['#disabled'] = TRUE;
+  $form['options']['promote']['#value'] = FALSE;
+  $form['options']['promote']['#description'] = t('This content type does not use the front page option.');
+
   //load JavaScript to make wide pages handling cleaner
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
 }
