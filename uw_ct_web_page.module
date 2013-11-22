@@ -23,12 +23,10 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
     }
   }
 
-<<<<<<< .mine
 	// Change file_upload_description
 	$form['field_image'][LANGUAGE_NONE]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][LANGUAGE_NONE]['#file_upload_description']);
 	$form['field_image'][LANGUAGE_NONE]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][LANGUAGE_NONE]['#file_upload_description']);
 
-=======
   // disable sticky option
   $form['options']['sticky']['#disabled'] = TRUE;
   $form['options']['sticky']['#value'] = FALSE;
@@ -39,7 +37,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
   $form['options']['promote']['#value'] = FALSE;
   $form['options']['promote']['#description'] = t('This content type does not use the front page option.');
 
->>>>>>> .r10486
   //load JavaScript to make wide pages handling cleaner
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
 }
