@@ -60,7 +60,7 @@ function uw_ct_web_page_update_7101() {
 function uw_ct_web_page_update_7102() {
   if (field_info_field('field_weight')) {
     field_delete_field('field_weight');
-    field_purge_batch();
+    field_purge_batch(1000);
   }
 }
 
