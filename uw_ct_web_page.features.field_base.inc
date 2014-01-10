@@ -168,7 +168,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'locked' => 0,
     'module' => 'text',
     'settings' => array(
-      'max_length' => 255,
+      'max_length' => 8,
     ),
     'translatable' => 1,
     'type' => 'text',
