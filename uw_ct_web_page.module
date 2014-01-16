@@ -60,6 +60,7 @@ function uw_ct_web_page_form_alter(&$form, &$form_state, $form_id) {
  * Add the breadcrumbs for the management view
  */
 function uw_ct_web_page_page_build() {
+
   $path = current_path();
 
   if ($path == 'admin/workbench/manage/web-pages') {

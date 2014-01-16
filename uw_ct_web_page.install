@@ -65,6 +65,38 @@ function uw_ct_web_page_update_7102() {
 }
 
 /**
+ * Update maxlength for WatIAM ID field in database since it won't normally do this if there's data in the field already
+ */
+function uw_ct_web_page_update_7103() {
+  //set default state for "success" - this will be preserved if there are no matching database records or if all changes succeed
+  $success = true;
+  //get current field config setup data
+  $result = db_query('SELECT id, data FROM {field_config} WHERE field_name=:field_name', array(':field_name' => 'field_contact_watiam_id'));
+  foreach ($result as $record) {
+    //swap out whatever maxlength is there now for "8"
+    $update_data = preg_replace('/"max_length"[\Wa-zA-Z1-9]+;\}/', '"max_length";i:8;}', $record->data);
+    $update_query = db_update('field_config')
+      ->fields(array(
+        'data' => $update_data,
+      ))
+      ->condition('id', $record->id)
+      ->execute();
+    if (!$update_query) {
+      //if the update query failed, it may not be because there was a problem, just that the existing data already matches
+      //test for this
+      $fail_test = db_query('SELECT data FROM {field_config} WHERE id=:id', array(':id' => $record->id))->fetchObject();
+      if (!$fail_test || !strstr($fail_test->data, '"max_length";i:8;}')) {
+        $success = false;
+      }
+    }
+  }
+  if (!$success) {
+    throw new DrupalUpdateException('There was some sort of problem updating the database with maxlength information.');
+  }
+}
+
+
+/**
  * Implements hook_uninstall().
  */
 function uw_ct_web_page_uninstall() {
