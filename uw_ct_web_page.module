@@ -39,6 +39,28 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   //load JavaScript to make wide pages handling cleaner
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
+
+    // Callback Validation for URL Aliases
+    if ($form_id == 'uw_web_page_node_form') {
+        $form['actions']['submit']['#validate'][] = 'uw_web_page_node_form_urlalias_validate';
+    }
+}
+
+/**
+ * Additional handler for uw_web_page_node_form URL alias validation.
+ */
+function uw_web_page_node_form_urlalias_validate($form, &$form_state) {
+    //dpm($form);
+    if(isset($form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
+        if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
+            form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
+        }
+    }
+    if(isset($form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
+        if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
+            form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
+        }
+    }
 }
 
 function uw_ct_web_page_wide_handler($element) {
