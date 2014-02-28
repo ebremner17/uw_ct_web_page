@@ -54,11 +54,13 @@ function uw_web_page_node_form_urlalias_validate($form, &$form_state) {
     if(isset($form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
         if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
             form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
+            form_set_error('path', '');
         }
     }
     if(isset($form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
         if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
             form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
+            form_set_error('path', '');
         }
     }
 }
