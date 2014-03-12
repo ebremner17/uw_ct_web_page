@@ -46,25 +46,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
     }
 }
 
-/**
- * Additional handler for uw_web_page_node_form URL alias validation.
- */
-function uw_web_page_node_form_urlalias_validate($form, &$form_state) {
-    //dpm($form);
-    if(isset($form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
-        if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][7]['alias']['#value'])) {
-            form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
-            form_set_error('path', '');
-        }
-    }
-    if(isset($form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
-        if(!preg_match("/^(?! )[0-9a-zA-Z-]*$/", $form['additional_settings']['group']['#groups']['additional_settings'][6]['alias']['#value'])) {
-            form_set_error('', t('There are invalid characters in the URL alias.  Only letters, numbers and dashes are acceptable.'));
-            form_set_error('path', '');
-        }
-    }
-}
-
 function uw_ct_web_page_wide_handler($element) {
   drupal_add_js(drupal_get_path('module', 'uw_ct_web_page') . '/uw_ct_web_page.js');
   return($element);
