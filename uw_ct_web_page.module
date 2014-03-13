@@ -39,11 +39,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   //load JavaScript to make wide pages handling cleaner
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
-
-    // Callback Validation for URL Aliases
-    if ($form_id == 'uw_web_page_node_form') {
-        $form['actions']['submit']['#validate'][] = 'uw_web_page_node_form_urlalias_validate';
-    }
 }
 
 function uw_ct_web_page_wide_handler($element) {
