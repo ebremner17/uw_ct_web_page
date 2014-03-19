@@ -116,8 +116,9 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
         $params['revision_id'] = intval(arg(3));
         break;
       case 'draft':
-        $revision_id = "(SELECT MAX(revision_id) FROM {field_revision_field_sidebar_content} WHERE entity_id = :nid)";
-        break;
+        //$revision_id = "(SELECT MAX(revision_id) FROM {field_revision_field_sidebar_content} WHERE entity_id = :nid)";
+				$revision_id = "(SELECT MAX(vid) FROM {node_revision} WHERE nid = :nid)";
+			  break;
       default:
         $revision_id = "(SELECT vid FROM {node} WHERE nid = :nid)";
     }
