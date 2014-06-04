@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install, update and uninstall functions for the uw_ct_web_page module.
+ * Install, update, uninstall, disable and enable functions for the uw_ct_web_page module.
  */
 
 /**
@@ -105,4 +105,40 @@ function uw_ct_web_page_uninstall() {
 
   // Remove the variable that we set
   variable_del('node_options_uw_web_page');
+}
+
+/**
+ * Implements hook_disable().
+ * Disable the web page content type so that new nodes of this type can't be created
+ * and the related views are removed from view UI while this feature is disabled
+ */
+function uw_ct_web_page_disable() {
+  watchdog('uw_ct_web_page', 'disable function executing');
+  //disable the content type
+  db_update('node_type')->fields(array('disabled' => 1, ))->condition('type', 'uw_web_page', '=')->execute();
+  //disable the view
+  $views_status = variable_get('views_defaults', array()); //read in any existing disabled views
+  $views_status['manage_web_pages'] = TRUE; //add ours to the list
+  variable_set('views_defaults', $views_status); //reset the variable with the new list
+  if (function_exists('views_invalidate_cache')) { //clear the views cache
+    views_invalidate_cache();
+  }
+}
+
+/**
+ * Implements hook_enable().
+ * Enable the web page content type so that new nodes of this type can be created
+ * and the related views are displayed in view UI while this feature is enabled
+ */
+function uw_ct_web_page_enable() {
+  watchdog('uw_ct_web_page', 'enable function executing');
+  //enable the content type
+  db_update('node_type')->fields(array('disabled' => 0, ))->condition('type', 'uw_web_page', '=')->execute();
+  //enable the view
+  $views_status = variable_get('views_defaults', array()); //read in any existing disabled views
+  unset($views_status['manage_web_pages']); //remove ours from the list
+  variable_set('views_defaults', $views_status); //reset the variable with the new list
+  if (function_exists('views_invalidate_cache')) { //clear the views cache
+    views_invalidate_cache();
+  }
 }
