@@ -202,8 +202,8 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  * @return string|void
  *   The rentered string or void if no value is set.
  */
-function uw_ct_web_page_filter_teaser($data) {
-  if (isset($data->field_body[0]['raw']['value'])) {
-    return check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $data->field_body[0]['raw']['value']), 'uw_tf_basic');
+function uw_ct_web_page_filter_teaser($field) {
+  if (isset($field[0]['raw']['value'])) {
+    return check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $field[0]['raw']['value']), 'uw_tf_basic');
   }
 }
