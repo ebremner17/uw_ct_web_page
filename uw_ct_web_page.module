@@ -183,7 +183,6 @@ function uw_ct_web_page_element_info_alter(&$type) {
  */
 function uw_ct_web_page_link_field_process($element, $form_state, $complete_form) {
   switch ($element['#field_name']) {
-  
     case 'field_related_link':
       $element['title']['#title'] = t('Link text');
       $element['url']['#title'] = t('URL');
