@@ -212,5 +212,5 @@ function uw_ct_web_page_filter_teaser($field) {
   else {
     return NULL;
   }
-  return check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $summary), 'uw_tf_basic');
+  return text_summary(check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $summary), 'uw_tf_basic'));
 }
