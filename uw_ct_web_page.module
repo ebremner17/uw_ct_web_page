@@ -199,11 +199,18 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  * @param $data object
  *   Views data object.
  *
- * @return string|void
- *   The rentered string or void if no value is set.
+ * @return string|null
+ *   The rentered string or null if no value is set.
  */
 function uw_ct_web_page_filter_teaser($field) {
-  if (isset($field[0]['raw']['value'])) {
-    return check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $field[0]['raw']['value']), 'uw_tf_basic');
+  if (isset($field[0]['raw']['summary']) && (string) $field[0]['raw']['summary'] !== '') {
+    $summary = $field[0]['raw']['summary'];
   }
+  elseif (isset($field[0]['raw']['value']) && (string) $field[0]['raw']['value'] !== '') {
+    $summary = $field[0]['raw']['value'];
+  }
+  else {
+    return NULL;
+  }
+  return check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $summary), 'uw_tf_basic');
 }
