@@ -214,3 +214,36 @@ function uw_ct_web_page_filter_teaser($field) {
   }
   return text_summary(check_markup(preg_replace('/<(\\/?)h\\d/', '<$1p', $summary), 'uw_tf_basic'));
 }
+
+/**
+ * Prepare text for teasers, using either the summary or trimmed value.
+ *
+ * Filter, trim, and convert <h#> to <p>.
+ *
+ * @param $content array
+ *   Array potentially with keys "summary" and "value" containing strings. Use
+ *   "summary" when it is a non-empty string, otherwise, a trimmed version of
+ *   "value".
+ *
+ * @return string|null
+ *   The processed text or NULL when neither key contains a non-empty string.
+ */
+function uw_ct_web_page_filter_summary(array $content) {
+  if (isset($content['summary']) && (string) $content['summary'] !== '') {
+    $summary = $content['summary'];;
+    $needs_trim = FALSE;
+  }
+  elseif (isset($content['value']) && (string) $content['value'] !== '') {
+    $summary = $content['value'];
+    $needs_trim = TRUE;
+  }
+  else {
+    return NULL;
+  }
+  $summary = check_markup(preg_replace(',<(/?)h\d,', '<$1p', $summary), 'uw_tf_basic');
+  // Trim only if using the value.
+  if ($needs_trim) {
+    $summary = text_summary($summary);
+  }
+  return $summary;
+}
