@@ -193,20 +193,6 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
 }
 
 /**
- * Alternative text filtering for teasers which removes widgets. Used by various
- * content types.
- *
- * @param $data array
- *   Views data array.
- *
- * @return string|null
- *   The rentered string or null if no value is set.
- */
-function uw_ct_web_page_filter_teaser(array $field) {
-  return uw_ct_web_page_filter_summary($field[0]['raw']);
-}
-
-/**
  * Prepare text for teasers, using either the summary or trimmed value.
  *
  * Filter, trim, and convert <h#> to <p>.
