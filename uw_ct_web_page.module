@@ -203,11 +203,11 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  *   "value".
  *
  * @return string|null
- *   The processed text or NULL when neither key contains a non-empty string.
+ *   The summary or NULL when the field is not set.
  */
 function uw_ct_web_page_filter_summary(array $content) {
   if (isset($content['summary']) && (string) $content['summary'] !== '') {
-    $summary = $content['summary'];;
+    $summary = $content['summary'];
     $needs_trim = FALSE;
   }
   elseif (isset($content['value']) && (string) $content['value'] !== '') {
