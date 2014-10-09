@@ -198,9 +198,8 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  * Filter, trim, and convert <h#> to <p>.
  *
  * @param $content array
- *   Array potentially with keys "summary" and "value" containing strings. Use
- *   "summary" when it is a non-empty string, otherwise, a trimmed version of
- *   "value".
+ *   Views field array or an array with keys summary or value from which to
+ *   generate the summary.
  *
  * @return string|null
  *   The summary or NULL when the field is not set.
@@ -212,6 +211,14 @@ function uw_ct_web_page_filter_summary(array $content) {
   }
   elseif (isset($content['value']) && (string) $content['value'] !== '') {
     $summary = $content['value'];
+    $needs_trim = TRUE;
+  }
+  elseif (isset($content[0]['raw']['summary']) && (string) $content[0]['raw']['summary'] !== '') {
+    $summary = $content[0]['raw']['summary'];
+    $needs_trim = FALSE;
+  }
+  elseif (isset($content[0]['raw']['value']) && (string) $content[0]['raw']['value'] !== '') {
+    $summary = $content[0]['raw']['value'];
     $needs_trim = TRUE;
   }
   else {
