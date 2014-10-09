@@ -203,6 +203,9 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  *   The rentered string or null if no value is set.
  */
 function uw_ct_web_page_filter_teaser(array $field) {
+  if (!isset($field[0]['raw'])) {
+    return NULL;
+  }
   return uw_ct_web_page_filter_summary($field[0]['raw']);
 }
 
