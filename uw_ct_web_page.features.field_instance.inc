@@ -342,6 +342,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'default_image' => 0,
       'file_directory' => 'uploads/images',
       'file_extensions' => 'png gif jpg jpeg',
+      'image_field_caption' => 0,
       'max_filesize' => '10 MB',
       'max_resolution' => '3000x3000',
       'min_resolution' => '10x10',
