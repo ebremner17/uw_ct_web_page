@@ -109,6 +109,7 @@ function uw_ct_web_page_field_default_field_instances() {
         ),
       ),
       'display_summary' => 1,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -167,6 +168,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'label' => 'Audience',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -233,6 +235,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'description_field' => 1,
+      'entity_translation_sync' => FALSE,
       'file_directory' => 'uploads/files',
       'file_extensions' => 'bib csv doc docx gz mp3 rtf pdf pot potx pps ppt pptx psd r tar tex txt wav xls xlsx zip',
       'max_filesize' => '25 MB',
@@ -340,6 +343,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'alt_field' => 0,
       'alt_field_required' => 0,
       'default_image' => 0,
+      'entity_translation_sync' => FALSE,
       'file_directory' => 'uploads/images',
       'file_extensions' => 'png gif jpg jpeg',
       'image_field_caption' => 0,
@@ -463,6 +467,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'url_cutoff' => 80,
       ),
       'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
       'title' => 'required',
       'title_label_use_field_label' => FALSE,
@@ -574,6 +579,7 @@ function uw_ct_web_page_field_default_field_instances() {
           ),
         ),
       ),
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -631,6 +637,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'label' => 'Note for wide web pages',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -686,6 +693,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'label' => 'Note for wide web pages (links)',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -745,6 +753,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'label' => 'Wide Page Width',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -759,6 +768,55 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-uw_web_page-title_field'
+  $field_instances['node-uw_web_page-title_field'] = array(
+    'bundle' => 'uw_web_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add additional links related to content on this web page.');
@@ -770,6 +828,7 @@ function uw_ct_web_page_field_default_field_instances() {
   t('Choose an image');
   t('Note for wide web pages');
   t('Note for wide web pages (links)');
+  t('Title');
   t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
   t('Wide Page Width');
 

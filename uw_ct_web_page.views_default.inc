@@ -419,6 +419,62 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Web pages';
   $handler->display->display_options['menu']['weight'] = '0';
+  $translatables['manage_web_pages'] = array(
+    t('Defaults'),
+    t('Content I\'ve Edited'),
+    t('view all'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Web pages description'),
+    t('<p>Web pages have main and sidebar content areas, as well as related links.</p>'),
+    t('Add web page link'),
+    t('<ul class="action-links">
+<li>
+<a href="../../../node/add/uw-web-page">Add web page</a>
+</li>
+</ul>'),
+    t('You haven\'t created or edited any content.'),
+    t('revision user'),
+    t('Get the actual content from a content revision.'),
+    t('Title'),
+    t('<a href="[path]">[title]</a>'),
+    t('Node ID'),
+    t('Last updated by'),
+    t('Last updated'),
+    t('Published'),
+    t('View'),
+    t('View '),
+    t('Create/edit draft'),
+    t('Create/edit draft '),
+    t('Moderate'),
+    t('Moderate '),
+    t('Clone'),
+    t('Clone '),
+    t('Actions'),
+    t('<ul class="links manage-actions">
+  <li>[nothing_3]</li>
+  <li>[nothing_1]</li>
+  <li>[nothing_2]</li>
+  <li>[nothing_4]</li>
+</ul>'),
+    t('Type'),
+    t('State'),
+    t('Manage Web Pages'),
+    t('more'),
+    t('Web pages not found text.'),
+    t('<em>No web pages have been found matching your criteria. To add web pages, please use the link above.</em>'),
+    t('Workbench Moderation: State'),
+  );
   $export['manage_web_pages'] = $view;
 
   return $export;
