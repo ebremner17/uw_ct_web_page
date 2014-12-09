@@ -103,10 +103,16 @@ function uw_ct_web_page_strongarm() {
           'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '10',
+          'weight' => '8',
+        ),
+        'locations' => array(
+          'weight' => '11',
+        ),
+        'language' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),
