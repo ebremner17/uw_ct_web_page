@@ -101,6 +101,8 @@ features[variable][] = node_submitted_uw_web_page
 features[variable][] = pathauto_node_uw_web_page_pattern
 features[variable][] = scheduler_publish_enable_uw_web_page
 features[variable][] = scheduler_publish_touch_uw_web_page
+features[variable][] = scheduler_publish_revision_uw_web_page
+features[variable][] = scheduler_unpublish_revision_uw_web_page
 features[variable][] = scheduler_unpublish_enable_uw_web_page
 features[variable][] = show_diff_inline_uw_web_page
 features[variable][] = show_preview_changes_uw_web_page
@@ -118,3 +120,10 @@ features_exclude[field][node-uw_web_page-field_sidebar_content] = node-uw_web_pa
 features_exclude[field][node-uw_web_page-field_sidebar_note_content] = node-uw_web_page-field_sidebar_note_content
 features_exclude[field][node-uw_web_page-field_sidebar_note_content_links] = node-uw_web_page-field_sidebar_note_content_links
 features_exclude[field][node-uw_web_page-field_wide] = node-uw_web_page-field_wide
+
+
+; Information added by drush on 2014-12-11
+version = "master-dev"
+project = "uw_ct_web_page"
+datestamp = "1418325724"
+
