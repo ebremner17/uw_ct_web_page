@@ -11,9 +11,17 @@ include_once('uw_ct_web_page.features.inc');
  * FORM_ID = uw_web_page_node_form (node add/edit form)
  */
 function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
-
   $sidebar = $form['#groups']['group_sidebar'];
-  $language = $form['language']['#value'];
+
+  switch ($form['language']['#type']) {
+    case 'select':
+      // grab the select default value.
+      $language = $form['language']['#default_value'];
+      break;
+    case 'value':
+    default:
+      $language = $form['language']['#value'];
+  } 
 
   // We expand the sidebar field group if any of its fields contain content
   foreach ($sidebar -> children as $field) {
@@ -24,8 +32,8 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
   }
 
 	// Change file_upload_description
-	$form['field_image'][LANGUAGE_NONE]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][LANGUAGE_NONE]['#file_upload_description']);
-	$form['field_image'][LANGUAGE_NONE]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][LANGUAGE_NONE]['#file_upload_description']);
+	$form['field_image'][$language]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][$language]['#file_upload_description']);
+	$form['field_image'][$language]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][$language]['#file_upload_description']);
 
   // disable sticky option
   $form['options']['sticky']['#disabled'] = TRUE;
