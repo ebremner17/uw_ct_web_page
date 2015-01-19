@@ -16,16 +16,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   $sidebar = $form['#groups']['group_sidebar'];
 
-  switch ($form['language']['#type']) {
-    case 'select':
-      // Grab the select default value.
-      $language = $form['language']['#default_value'];
-      break;
-    case 'value':
-    default:
-      $language = $form['language']['#value'];
-  } 
-
   // We expand the sidebar field group if any of its fields contain content.
   foreach ($sidebar -> children as $field) {
     if (!empty($form[$field][$language][0]['#default_value'])) {
