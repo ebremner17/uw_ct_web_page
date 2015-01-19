@@ -8,7 +8,7 @@ include_once('uw_ct_web_page.features.inc');
 
 /**
  * Implements hook_form_FORM_ID_alter().
- * FORM_ID = uw_web_page_node_form (node add/edit form)
+ * FORM_ID = uw_web_page_node_form (node add/edit form).
  */
 function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
   global $language;
@@ -18,7 +18,7 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   switch ($form['language']['#type']) {
     case 'select':
-      // grab the select default value.
+      // Grab the select default value.
       $language = $form['language']['#default_value'];
       break;
     case 'value':
@@ -26,7 +26,7 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
       $language = $form['language']['#value'];
   } 
 
-  // We expand the sidebar field group if any of its fields contain content
+  // We expand the sidebar field group if any of its fields contain content.
   foreach ($sidebar -> children as $field) {
     if (!empty($form[$field][$language][0]['#default_value'])) {
       $sidebar -> format_settings['formatter'] = 'collapsible';
@@ -34,40 +34,38 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
     }
   }
 
-  // Change file_upload_description
+  // Change file_upload_description.
   $form['field_image'][$langcode]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][$langcode]['#file_upload_description']);
   $form['field_image'][$langcode]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][$langcode]['#file_upload_description']);
   $form['field_image'][$langcode]['#file_upload_title'] = 'Add a new image';
-  // disable sticky option
+  // Disable sticky option.
   $form['options']['sticky']['#disabled'] = TRUE;
   $form['options']['sticky']['#value'] = FALSE;
   $form['options']['sticky']['#description'] = t('This content type does not use the sticky option.');
 
-  // disable front page option
+  // Disable front page option.
   $form['options']['promote']['#disabled'] = TRUE;
   $form['options']['promote']['#value'] = FALSE;
   $form['options']['promote']['#description'] = t('This content type does not use the front page option.');
 
-  //load JavaScript to make wide pages handling cleaner
+  // Load JavaScript to make wide pages handling cleaner.
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
 }
 
+/**
+ * Add Javascript to wide pages.
+ * @param $element
+ * @return $element
+ */
 function uw_ct_web_page_wide_handler($element) {
   drupal_add_js(drupal_get_path('module', 'uw_ct_web_page') . '/uw_ct_web_page.js');
   return($element);
 }
 
 /**
- * Implements hook_form_alter().
- */
-function uw_ct_web_page_form_alter(&$form, &$form_state, $form_id) {
-}
-
-
-/**
  * Implements hook_page_build().
  *
- * Add the breadcrumbs for the management view
+ * Add the breadcrumbs for the management view.
  */
 function uw_ct_web_page_page_build() {
 
@@ -86,7 +84,7 @@ function uw_ct_web_page_page_build() {
  * Implements hook_block_info().
  */
 function uw_ct_web_page_block_info() {
-  // These blocks change depending on the page being viewed, so we cache per page (instead of the default per role)
+  // These blocks change depending on the page being viewed, so we cache per page (instead of the default per role).
   $blocks['uw_sidebar_block'] = array(
     'info' => t('uWaterloo Sidebar Content'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
@@ -102,10 +100,9 @@ function uw_ct_web_page_block_info() {
  * Implements hook_block_view().
  */
 function uw_ct_web_page_block_view($delta = '') {
-  //The $delta parameter tells us which block is being requested.
+  // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'uw_sidebar_block':
-      // no title $block['subject'] = t('');
       $block['content'] = uw_ct_web_page_sidebar_content('field_sidebar_content', array('field_sidebar_content_value'));
       break;
     case 'uw_sidebar_related_links':
@@ -126,9 +123,8 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
         $params['revision_id'] = intval(arg(3));
         break;
       case 'draft':
-        //$revision_id = "(SELECT MAX(revision_id) FROM {field_revision_field_sidebar_content} WHERE entity_id = :nid)";
-				$revision_id = "(SELECT MAX(vid) FROM {node_revision} WHERE nid = :nid)";
-			  break;
+        $revision_id = "(SELECT MAX(vid) FROM {node_revision} WHERE nid = :nid)";
+        break;
       default:
         $revision_id = "(SELECT vid FROM {node} WHERE nid = :nid)";
     }
@@ -175,7 +171,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
 }
 
 /**
- * implements hook_element_info_alter
+ * Implements hook_element_info_alter().
  */
 function uw_ct_web_page_element_info_alter(&$type) {
   if (isset($type['link_field'])) {
