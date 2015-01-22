@@ -18,16 +18,19 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   // We expand the sidebar field group if any of its fields contain content.
   foreach ($sidebar -> children as $field) {
-    if (!empty($form[$field][$language][0]['#default_value'])) {
+    if (!empty($form[$field][$langcode][0]['#default_value'])) {
       $sidebar -> format_settings['formatter'] = 'collapsible';
       break;
     }
   }
-
   // Change file_upload_description.
-  $form['field_image'][$langcode]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][$langcode]['#file_upload_description']);
-  $form['field_image'][$langcode]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][$langcode]['#file_upload_description']);
-  $form['field_image'][$langcode]['#file_upload_title'] = 'Add a new image';
+  // When you are creating a webpage all fields are in the undefined language.
+  // #file_upload_description and #file_upload_title do not exist when you creating the webpage.
+  if (isset($form['field_image'][$langcode])) {
+    $form['field_image'][$langcode]['#file_upload_description'] = str_replace('Files', 'Images', $form['field_image'][$langcode]['#file_upload_description']);
+    $form['field_image'][$langcode]['#file_upload_description'] = str_replace('file', 'image', $form['field_image'][$langcode]['#file_upload_description']);
+    $form['field_image'][$langcode]['#file_upload_title'] = 'Add a new image';
+  }
   // Disable sticky option.
   $form['options']['sticky']['#disabled'] = TRUE;
   $form['options']['sticky']['#value'] = FALSE;
