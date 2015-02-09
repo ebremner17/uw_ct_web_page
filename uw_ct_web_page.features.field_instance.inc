@@ -121,7 +121,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -136,7 +136,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -187,7 +187,111 @@ function uw_ct_web_page_field_default_field_instances() {
         'track_list' => 0,
       ),
       'type' => 'term_reference_tree',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-uw_web_page-field_event_image'
+  $field_instances['node-uw_web_page-field_event_image'] = array(
+    'bundle' => 'uw_web_page',
+    'deleted' => 0,
+    'description' => 'The social media listing page image allows the use of an alternative image for Twitter Cards or Open Graph (Facebook) posts.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'entity_teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_event_image',
+    'label' => 'Listing page image for social media',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'uploads/images',
+      'file_extensions' => 'png gif jpg jpeg',
+      'image_field_caption' => 0,
+      'max_filesize' => '10 MB',
+      'max_resolution' => '3000x3000',
+      'min_resolution' => '50x50',
+      'title_field' => 0,
+      'title_field_required' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'imce' => 'imce',
+            'reference' => 'reference',
+            'remote' => 'remote',
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'copy',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 1,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 1,
+            'search_all_fields' => 1,
+          ),
+        ),
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'image',
+        'insert_styles' => array(
+          'auto' => 0,
+          'icon_link' => 0,
+          'image' => 'image',
+          'image_banner-750w' => 0,
+          'image_banner-wide' => 0,
+          'image_body-500px-wide' => 'image_body-500px-wide',
+          'image_galleryformatter_slide' => 0,
+          'image_galleryformatter_thumb' => 0,
+          'image_image_gallery_slide' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_person-profile-list' => 0,
+          'image_profile-photo-block' => 0,
+          'image_sidebar-220px-wide' => 'image_sidebar-220px-wide',
+          'image_thumbnail' => 0,
+          'image_uw_service_icon' => 0,
+          'image_wide-body-750px-wide' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => 500,
+        'label_help_description' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 1,
     ),
   );
 
@@ -201,7 +305,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -307,7 +411,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 5,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -423,7 +527,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -501,7 +605,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -605,7 +709,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'module' => 'markup',
         'settings' => array(),
         'type' => 'markup_default',
-        'weight' => 7,
+        'weight' => 1,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -661,7 +765,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'module' => 'markup',
         'settings' => array(),
         'type' => 'markup_default',
-        'weight' => 8,
+        'weight' => 2,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -721,7 +825,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 4,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -764,7 +868,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -779,7 +883,7 @@ function uw_ct_web_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -826,8 +930,10 @@ function uw_ct_web_page_field_default_field_instances() {
   t('Body');
   t('Choose a file');
   t('Choose an image');
+  t('Listing page image for social media');
   t('Note for wide web pages');
   t('Note for wide web pages (links)');
+  t('The social media listing page image allows the use of an alternative image for twitter cards or open graph (Facebook) posts.');
   t('Title');
   t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
   t('Wide Page Width');

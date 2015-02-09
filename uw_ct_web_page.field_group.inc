@@ -21,7 +21,7 @@ function uw_ct_web_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sidebar related links',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_related_link',
       1 => 'field_sidebar_note_content_links',
@@ -50,7 +50,7 @@ function uw_ct_web_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Sidebar complementary content',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_sidebar_content',
       1 => 'field_sidebar_note_content',
@@ -79,7 +79,7 @@ function uw_ct_web_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Upload a file',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_file',
     ),
@@ -107,7 +107,7 @@ function uw_ct_web_page_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Upload an image',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_image',
     ),
