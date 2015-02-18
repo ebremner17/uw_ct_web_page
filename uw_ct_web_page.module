@@ -232,7 +232,7 @@ function uw_ct_web_page_filter_summary(array $content) {
 }
 
 /**
- *  Implements hook_title_update_batch_alter().
+ *  Implements hook_update_title_batch_alter().
  */
 function uw_ct_web_page_update_title_batch_alter(&$batch) {
   $bundle = 'uw_web_page';
