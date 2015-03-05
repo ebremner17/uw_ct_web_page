@@ -11,7 +11,6 @@ include_once('uw_ct_web_page.features.inc');
  * FORM_ID = uw_web_page_node_form (node add/edit form).
  */
 function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
-dpm($form);
   global $language;
   $langcode = $language->language;
 
