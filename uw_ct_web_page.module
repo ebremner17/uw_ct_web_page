@@ -230,15 +230,3 @@ function uw_ct_web_page_filter_summary(array $content) {
   }
   return $summary;
 }
-
-/**
- *  Implements hook_update_title_batch_alter().
- */
-function uw_ct_web_page_update_title_batch_alter(&$batch) {
-  //revert the fields for this feature so we have the ones we need
-  features_revert(array('uw_ct_web_page' => array('field_base','field_instance')));
-  $bundle = 'uw_web_page';
-  $legacy_field = 'title';
-  $entity_type = 'node';
-  $batch['operations'][] = array('title_field_replacement_batch', array($entity_type, $bundle, $legacy_field));
-}
