@@ -11,9 +11,6 @@ function uw_ct_web_page_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
-  if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
-    return array("version" => "1");
-  }
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -37,16 +34,8 @@ function uw_ct_web_page_image_default_styles() {
 
   // Exported image style: body-500px-wide.
   $styles['body-500px-wide'] = array(
-    'name' => 'body-500px-wide',
     'effects' => array(
       3 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 500,
@@ -61,16 +50,8 @@ function uw_ct_web_page_image_default_styles() {
 
   // Exported image style: sidebar-220px-wide.
   $styles['sidebar-220px-wide'] = array(
-    'name' => 'sidebar-220px-wide',
     'effects' => array(
       5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 220,
@@ -85,16 +66,8 @@ function uw_ct_web_page_image_default_styles() {
 
   // Exported image style: wide-body-750px-wide.
   $styles['wide-body-750px-wide'] = array(
-    'name' => 'wide-body-750px-wide',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 750,
