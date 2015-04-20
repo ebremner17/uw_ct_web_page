@@ -1,8 +1,8 @@
 (function ($) {
   $(function(){
+    // Change the width of the body ckeditor when wide page is checked.
     $widecheck = $('#edit-field-wide-und');
-    $textformatter = $('#edit-body-und-0-format--2');
-    //set_wide_text_format($widecheck.checked);
+    $textformatter = $('[id ^=edit-body][id $=0-format--2]');
     $widecheck.click(function() {
       set_wide_text_format(this.checked);
     })
