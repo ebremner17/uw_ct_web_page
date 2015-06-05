@@ -691,7 +691,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 10,
+        'rows' => 20,
       ),
       'type' => 'text_textarea',
       'weight' => 12,
