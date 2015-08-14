@@ -235,7 +235,7 @@ function uw_ct_web_page_filter_summary(array $content) {
   // Trim only if using the value.
   if ($needs_trim) {
     // Because text_summary can cause unclosed tags (https://www.drupal.org/node/221257), run the HTML corrector filter on the summary.
-    $summary = _filter_htmlcorrector(text_summary($summary);
+    $summary = _filter_htmlcorrector(text_summary($summary));
   }
   return $summary;
 }
