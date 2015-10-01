@@ -176,6 +176,38 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
 }
 
 /**
+ * Implements hook_entity_info_alter().
+ * Add 'Embedded' view mode.
+ */
+function uw_ct_web_page_entity_info_alter(&$entity_info) {
+  $entity_info['node']['view modes']['embedded'] = array(
+      'label' => t('Embedded'),
+      'custom settings' => TRUE,
+  );
+}
+
+/**
+ * Implements hook_preprocess_node().
+ * Create node--uw-image-gallery--embedded.tpl.php to process embedded view mode for image gallery
+ */
+function uw_ct_web_page_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'embedded') {
+    $vars['theme_hook_suggestions'][] = 'node__uw_image_gallery__embedded';
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function uw_ct_web_page_theme_registry_alter(&$theme_registry) {
+  $theme_registry['node__uw_image_gallery__embedded'] = array(
+    'template' => 'node--uw-image-gallery--embedded',
+    'path' => drupal_get_path('module', 'uw_ct_web_page') . '/templates',
+    'type' => 'theme',
+  );
+}
+
+/**
  * Implements hook_element_info_alter().
  */
 function uw_ct_web_page_element_info_alter(&$type) {
