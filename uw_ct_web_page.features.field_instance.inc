@@ -29,6 +29,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -138,6 +144,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 9,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -202,6 +214,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -306,6 +324,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -412,6 +436,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -529,6 +559,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 8,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -606,6 +642,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -711,6 +753,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'markup_default',
         'weight' => 1,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -754,7 +802,8 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_sidebar_note_content_links'
+  // Exported field_instance:
+  // 'node-uw_web_page-field_sidebar_note_content_links'
   $field_instances['node-uw_web_page-field_sidebar_note_content_links'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -766,6 +815,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'settings' => array(),
         'type' => 'markup_default',
         'weight' => 2,
+      ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'entity_teaser' => array(
         'label' => 'above',
@@ -827,6 +882,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -885,6 +946,12 @@ function uw_ct_web_page_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 10,
       ),
+      'embedded' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'entity_teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -933,7 +1000,7 @@ function uw_ct_web_page_field_default_field_instances() {
   t('Listing page image for social media');
   t('Note for wide web pages');
   t('Note for wide web pages (links)');
-  t('The social media listing page image allows the use of an alternative image for twitter cards or open graph (Facebook) posts.');
+  t('The social media listing page image allows the use of an alternative image for Twitter Cards or Open Graph (Facebook) posts.');
   t('Title');
   t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
   t('Wide Page Width');
