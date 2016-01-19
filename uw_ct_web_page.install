@@ -8,7 +8,6 @@
 /**
  * Implements hook_install().
  */
-
 function uw_ct_web_page_install() {
   // Insert default pre-defined RDF mapping into the database.
   $rdf_mappings = array(
@@ -28,9 +27,9 @@ function uw_ct_web_page_install() {
   // While this is set with strongarm, if the variable is not added to the database many errors are generated
   // Issue occurs in workbench_moderation.module line 878
   // if (in_array('revision', $options) && in_array('moderation', $options)) initially evaluates as false
-  // this prevents the workbench moderation array from being added to the node object, and everything falls apart
-
-  // Do one variable_set for every content type using workbench moderation
+  // this prevents the workbench moderation array from being added to the node object, and everything falls apart.
+  //
+  // Do one variable_set for every content type using workbench moderation.
   variable_set('node_options_uw_web_page', array(0 => 'moderation', 1 => 'revision'));
 }
 
@@ -39,7 +38,7 @@ function uw_ct_web_page_install() {
  */
 
 /**
- * Enabling contrib module: conditional_fields
+ * Enabling contrib module: conditional_fields.
  */
 function uw_ct_web_page_update_7100() {
   $modules = array('conditional_fields');
@@ -47,7 +46,7 @@ function uw_ct_web_page_update_7100() {
 }
 
 /**
- * Enabling contrib module: markup
+ * Enabling contrib module: markup.
  */
 function uw_ct_web_page_update_7101() {
   $modules = array('markup');
@@ -55,7 +54,7 @@ function uw_ct_web_page_update_7101() {
 }
 
 /**
- * Remove weird "weight" field
+ * Remove weird "weight" field.
  */
 function uw_ct_web_page_update_7102() {
   if (field_info_field('field_weight')) {
@@ -65,15 +64,15 @@ function uw_ct_web_page_update_7102() {
 }
 
 /**
- * Update maxlength for WatIAM ID field in database since it won't normally do this if there's data in the field already
+ * Update maxlength for WatIAM ID field in database since it won't normally do this if there's data in the field already.
  */
 function uw_ct_web_page_update_7103() {
-  //set default state for "success" - this will be preserved if there are no matching database records or if all changes succeed
-  $success = true;
-  //get current field config setup data
+  // Set default state for "success" - this will be preserved if there are no matching database records or if all changes succeed.
+  $success = TRUE;
+  // Get current field config setup data.
   $result = db_query('SELECT id, data FROM {field_config} WHERE field_name=:field_name', array(':field_name' => 'field_contact_watiam_id'));
   foreach ($result as $record) {
-    //swap out whatever maxlength is there now for "8"
+    // Swap out whatever maxlength is there now for "8".
     $update_data = preg_replace('/"max_length"[\Wa-zA-Z1-9]+;\}/', '"max_length";i:8;}', $record->data);
     $update_query = db_update('field_config')
       ->fields(array(
@@ -82,11 +81,11 @@ function uw_ct_web_page_update_7103() {
       ->condition('id', $record->id)
       ->execute();
     if (!$update_query) {
-      //if the update query failed, it may not be because there was a problem, just that the existing data already matches
-      //test for this
+      // If the update query failed, it may not be because there was a problem, just that the existing data already matches.
+      // Test for this.
       $fail_test = db_query('SELECT data FROM {field_config} WHERE id=:id', array(':id' => $record->id))->fetchObject();
       if (!$fail_test || !strstr($fail_test->data, '"max_length";i:8;}')) {
-        $success = false;
+        $success = FALSE;
       }
     }
   }
@@ -100,45 +99,55 @@ function uw_ct_web_page_update_7103() {
  * Implements hook_uninstall().
  */
 function uw_ct_web_page_uninstall() {
-  // Remove the RDF mapping from the database
+  // Remove the RDF mapping from the database.
   rdf_mapping_delete('node', 'uw_web_page');
 
-  // Remove the variable that we set
+  // Remove the variable that we set.
   variable_del('node_options_uw_web_page');
 }
 
 /**
  * Implements hook_disable().
+ *
  * Disable the web page content type so that new nodes of this type can't be created
- * and the related views are removed from view UI while this feature is disabled
+ * and the related views are removed from view UI while this feature is disabled.
  */
 function uw_ct_web_page_disable() {
   watchdog('uw_ct_web_page', 'disable function executing');
-  //disable the content type
-  db_update('node_type')->fields(array('disabled' => 1, ))->condition('type', 'uw_web_page', '=')->execute();
-  //disable the view
-  $views_status = variable_get('views_defaults', array()); //read in any existing disabled views
-  $views_status['manage_web_pages'] = TRUE; //add ours to the list
-  variable_set('views_defaults', $views_status); //reset the variable with the new list
-  if (function_exists('views_invalidate_cache')) { //clear the views cache
+  // Disable the content type.
+  db_update('node_type')->fields(array('disabled' => 1))->condition('type', 'uw_web_page', '=')->execute();
+  // Disable the view.
+  // Read in any existing disabled views.
+  $views_status = variable_get('views_defaults', array());
+  // Add ours to the list.
+  $views_status['manage_web_pages'] = TRUE;
+  // Reset the variable with the new list.
+  variable_set('views_defaults', $views_status);
+  if (function_exists('views_invalidate_cache')) {
+    // Clear the views cache.
     views_invalidate_cache();
   }
 }
 
 /**
  * Implements hook_enable().
+ *
  * Enable the web page content type so that new nodes of this type can be created
- * and the related views are displayed in view UI while this feature is enabled
+ * and the related views are displayed in view UI while this feature is enabled.
  */
 function uw_ct_web_page_enable() {
   watchdog('uw_ct_web_page', 'enable function executing');
-  //enable the content type
-  db_update('node_type')->fields(array('disabled' => 0, ))->condition('type', 'uw_web_page', '=')->execute();
-  //enable the view
-  $views_status = variable_get('views_defaults', array()); //read in any existing disabled views
-  unset($views_status['manage_web_pages']); //remove ours from the list
-  variable_set('views_defaults', $views_status); //reset the variable with the new list
-  if (function_exists('views_invalidate_cache')) { //clear the views cache
+  // Enable the content type.
+  db_update('node_type')->fields(array('disabled' => 0))->condition('type', 'uw_web_page', '=')->execute();
+  // Enable the view.
+  // Read in any existing disabled views.
+  $views_status = variable_get('views_defaults', array());
+  // Remove ours from the list.
+  unset($views_status['manage_web_pages']);
+  // Reset the variable with the new list.
+  variable_set('views_defaults', $views_status);
+  if (function_exists('views_invalidate_cache')) {
+    // Clear the views cache.
     views_invalidate_cache();
   }
 }

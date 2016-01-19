@@ -1,3 +1,7 @@
+/**
+ * @file
+ */
+
 (function ($) {
   $(function(){
     // Change the width of the body ckeditor when wide page is checked.
@@ -9,7 +13,8 @@
     function set_wide_text_format($checked) {
       if ($checked) {
         $textformatter.val('uw_tf_standard_wide').change();
-      } else {
+      }
+      else {
         $textformatter.val('uw_tf_standard').change();
       }
     }

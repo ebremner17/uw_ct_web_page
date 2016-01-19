@@ -4,7 +4,7 @@
  * Code for the uWaterloo Content Type Web Page feature.
  */
 
-include_once('uw_ct_web_page.features.inc');
+include_once 'uw_ct_web_page.features.inc';
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -21,9 +21,9 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
   }
 
   // We expand the sidebar field group if any of its fields contain content.
-  foreach ($sidebar -> children as $field) {
+  foreach ($sidebar->children as $field) {
     if (!empty($form[$field][$langcode][0]['#default_value'])) {
-      $sidebar -> format_settings['formatter'] = 'collapsible';
+      $sidebar->format_settings['formatter'] = 'collapsible';
       break;
     }
   }
@@ -59,12 +59,14 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
 /**
  * Add Javascript to wide pages.
+ *
  * @param $element
+ *
  * @return $element
  */
 function uw_ct_web_page_wide_handler($element) {
   drupal_add_js(drupal_get_path('module', 'uw_ct_web_page') . '/uw_ct_web_page.js');
-  return($element);
+  return $element;
 }
 
 /**
@@ -110,6 +112,7 @@ function uw_ct_web_page_block_view($delta = '') {
     case 'uw_sidebar_block':
       $block['content'] = uw_ct_web_page_sidebar_content('field_sidebar_content', array('field_sidebar_content_value'));
       break;
+
     case 'uw_sidebar_related_links':
       $block['subject'] = t('Related links');
       $block['content'] = uw_ct_web_page_sidebar_content('field_related_link', array('field_related_link_url', 'field_related_link_title'));
@@ -118,6 +121,9 @@ function uw_ct_web_page_block_view($delta = '') {
   return $block;
 }
 
+/**
+ *
+ */
 function uw_ct_web_page_sidebar_content($field, $cols) {
   if (arg(0) === 'node') {
     $params = array('nid' => intval(arg(1)));
@@ -127,9 +133,11 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
         $revision_id = ':revision_id';
         $params['revision_id'] = intval(arg(3));
         break;
+
       case 'draft':
         $revision_id = "(SELECT MAX(vid) FROM {node_revision} WHERE nid = :nid)";
         break;
+
       default:
         $revision_id = "(SELECT vid FROM {node} WHERE nid = :nid)";
     }
@@ -158,6 +166,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
           $output .= $record->field_sidebar_content_value;
         }
         break;
+
       case 'field_related_link':
         $output = array();
         foreach ($result as $record) {
@@ -181,8 +190,8 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
  */
 function uw_ct_web_page_entity_info_alter(&$entity_info) {
   $entity_info['node']['view modes']['embedded'] = array(
-      'label' => t('Embedded'),
-      'custom settings' => TRUE,
+    'label' => t('Embedded'),
+    'custom settings' => TRUE,
   );
 }
 
@@ -219,7 +228,7 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
     case 'field_related_link':
       $element['title']['#title'] = t('Link text');
       $element['url']['#title'] = t('URL');
-      $element['title']['#description'] = t('The link text is limited to '. $element['title']['#maxlength'].' characters maximum.');
+      $element['title']['#description'] = t('The link text is limited to ' . $element['title']['#maxlength'] . ' characters maximum.');
       break;
   }
   return $element;

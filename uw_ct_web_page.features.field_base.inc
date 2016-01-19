@@ -10,7 +10,7 @@
 function uw_ct_web_page_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'comment_body'
+  // Exported field_base: 'comment_body'.
   $field_bases['comment_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -62,7 +62,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_audience'
+  // Exported field_base: 'field_audience'.
   $field_bases['field_audience'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -95,7 +95,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_block_visibility'
+  // Exported field_base: 'field_block_visibility'.
   $field_bases['field_block_visibility'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -119,7 +119,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_body_no_summary'
+  // Exported field_base: 'field_body_no_summary'.
   $field_bases['field_body_no_summary'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -143,7 +143,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_contact_watiam_id'
+  // Exported field_base: 'field_contact_watiam_id'.
   $field_bases['field_contact_watiam_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -168,7 +168,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_event_image'
+  // Exported field_base: 'field_event_image'.
   $field_bases['field_event_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -196,7 +196,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_file'
+  // Exported field_base: 'field_file'.
   $field_bases['field_file'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -225,7 +225,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_image'
+  // Exported field_base: 'field_image'.
   $field_bases['field_image'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -253,7 +253,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_related_link'
+  // Exported field_base: 'field_related_link'.
   $field_bases['field_related_link'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -286,7 +286,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_sidebar_content'
+  // Exported field_base: 'field_sidebar_content'.
   $field_bases['field_sidebar_content'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -310,7 +310,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sidebar_note_content'
+  // Exported field_base: 'field_sidebar_note_content'.
   $field_bases['field_sidebar_note_content'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -335,7 +335,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'markup',
   );
 
-  // Exported field_base: 'field_sidebar_note_content_links'
+  // Exported field_base: 'field_sidebar_note_content_links'.
   $field_bases['field_sidebar_note_content_links'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -360,7 +360,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'markup',
   );
 
-  // Exported field_base: 'field_wide'
+  // Exported field_base: 'field_wide'.
   $field_bases['field_wide'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -389,7 +389,7 @@ function uw_ct_web_page_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'title_field'
+  // Exported field_base: 'title_field'.
   $field_bases['title_field'] = array(
     'active' => 1,
     'cardinality' => 1,
