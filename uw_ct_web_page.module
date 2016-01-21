@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the uWaterloo Content Type Web Page feature.
@@ -8,6 +9,7 @@ include_once 'uw_ct_web_page.features.inc';
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
  * FORM_ID = uw_web_page_node_form (node add/edit form).
  */
 function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $form_id) {
@@ -59,10 +61,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
 /**
  * Add Javascript to wide pages.
- *
- * @param $element
- *
- * @return $element
  */
 function uw_ct_web_page_wide_handler($element) {
   drupal_add_js(drupal_get_path('module', 'uw_ct_web_page') . '/uw_ct_web_page.js');
@@ -186,6 +184,7 @@ function uw_ct_web_page_sidebar_content($field, $cols) {
 
 /**
  * Implements hook_entity_info_alter().
+ *
  * Add 'Embedded' view mode.
  */
 function uw_ct_web_page_entity_info_alter(&$entity_info) {
@@ -239,7 +238,7 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
  *
  * Filter, trim, and convert <h#> to <p>.
  *
- * @param $content array
+ * @param array $content
  *   Views field array or an array with keys summary or value from which to
  *   generate the summary.
  *
