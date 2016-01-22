@@ -227,7 +227,8 @@ function uw_ct_web_page_link_field_process($element, $form_state, $complete_form
     case 'field_related_link':
       $element['title']['#title'] = t('Link text');
       $element['url']['#title'] = t('URL');
-      $element['title']['#description'] = t('The link text is limited to ' . $element['title']['#maxlength'] . ' characters maximum.');
+      $element['title']['#description'] = t('The link text is limited to @maxlength characters maximum.', array('@maxlength' => $element['title']['#maxlength']));
+
       break;
   }
   return $element;
