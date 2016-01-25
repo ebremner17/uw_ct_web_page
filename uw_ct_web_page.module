@@ -78,9 +78,9 @@ function uw_ct_web_page_page_build() {
 
   if ($path == 'admin/workbench/manage/web-pages') {
     $breadcrumb = drupal_get_breadcrumb();
-    $breadcrumb[1] = l('Administration', 'admin');
-    $breadcrumb[2] = l('My Workbench', 'admin/workbench');
-    $breadcrumb[3] = l('Create/Manage Content', 'admin/workbench/create');
+    $breadcrumb[1] = l(t('Administration'), 'admin');
+    $breadcrumb[2] = l(t('My Workbench'), 'admin/workbench');
+    $breadcrumb[3] = l(t('Create/Manage Content'), 'admin/workbench/create');
     drupal_set_breadcrumb($breadcrumb);
   }
 }
