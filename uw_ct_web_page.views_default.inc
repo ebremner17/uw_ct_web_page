@@ -205,7 +205,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'View';
   $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'node/[nid_1]';
-  $handler->display->display_options['fields']['nothing_3']['alter']['alt'] = 'View ';
+  $handler->display->display_options['fields']['nothing_3']['alter']['alt'] = 'View';
   $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'manage-actions-view';
   /* Field: Create/edit draft */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -217,7 +217,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Create/edit draft';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/[nid_1]/edit';
-  $handler->display->display_options['fields']['nothing_1']['alter']['alt'] = 'Create/edit draft ';
+  $handler->display->display_options['fields']['nothing_1']['alter']['alt'] = 'Create/edit draft';
   $handler->display->display_options['fields']['nothing_1']['alter']['link_class'] = 'manage-actions-edit';
   /* Field: Moderate */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
@@ -229,7 +229,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Moderate';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid_1]/moderation';
-  $handler->display->display_options['fields']['nothing_2']['alter']['alt'] = 'Moderate ';
+  $handler->display->display_options['fields']['nothing_2']['alter']['alt'] = 'Moderate';
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'manage-actions-moderate';
   /* Field: Clone */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
@@ -241,7 +241,7 @@ function uw_ct_web_page_views_default_views() {
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = 'Clone';
   $handler->display->display_options['fields']['nothing_4']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_4']['alter']['path'] = 'node/[nid_1]/clone';
-  $handler->display->display_options['fields']['nothing_4']['alter']['alt'] = 'Clone ';
+  $handler->display->display_options['fields']['nothing_4']['alter']['alt'] = 'Clone';
   $handler->display->display_options['fields']['nothing_4']['alter']['link_class'] = 'manage-actions-clone';
   /* Field: Actions */
   $handler->display->display_options['fields']['nothing_5']['id'] = 'nothing_5';
@@ -454,13 +454,9 @@ function uw_ct_web_page_views_default_views() {
     t('Last updated'),
     t('Published'),
     t('View'),
-    t('View '),
     t('Create/edit draft'),
-    t('Create/edit draft '),
     t('Moderate'),
-    t('Moderate '),
     t('Clone'),
-    t('Clone '),
     t('Actions'),
     t('<ul class="links manage-actions">
   <li>[nothing_3]</li>
