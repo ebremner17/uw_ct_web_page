@@ -200,7 +200,7 @@ function uw_ct_web_page_entity_info_alter(&$entity_info) {
 function uw_ct_web_page_theme_registry_alter(&$theme_registry) {
   $theme_registry['node__uw_image_gallery__embedded'] = array(
     'template' => 'node--uw-image-gallery--embedded',
-    'path' => drupal_get_path('module', 'uw_ct_web_page') . '/templates',
+    'path' => base_path() . drupal_get_path('module', 'uw_ct_web_page') . '/templates',
     'type' => 'theme',
   );
 }
