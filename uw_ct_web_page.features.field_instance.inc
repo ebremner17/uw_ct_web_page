@@ -10,7 +10,7 @@
 function uw_ct_web_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-uw_web_page-body'.
+  // Exported field_instance: 'node-uw_web_page-body'
   $field_instances['node-uw_web_page-body'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => array(
@@ -131,7 +131,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_audience'.
+  // Exported field_instance: 'node-uw_web_page-field_audience'
   $field_instances['node-uw_web_page-field_audience'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
@@ -203,7 +203,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_event_image'.
+  // Exported field_instance: 'node-uw_web_page-field_event_image'
   $field_instances['node-uw_web_page-field_event_image'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -245,6 +245,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'uploads/images',
       'file_extensions' => 'png gif jpg jpeg',
+      'focal_point' => 0,
       'image_field_caption' => 0,
       'max_filesize' => '10 MB',
       'max_resolution' => '3000x3000',
@@ -313,7 +314,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_file'.
+  // Exported field_instance: 'node-uw_web_page-field_file'
   $field_instances['node-uw_web_page-field_file'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -425,7 +426,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_image'.
+  // Exported field_instance: 'node-uw_web_page-field_image'
   $field_instances['node-uw_web_page-field_image'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -480,6 +481,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'entity_translation_sync' => FALSE,
       'file_directory' => 'uploads/images',
       'file_extensions' => 'png gif jpg jpeg',
+      'focal_point' => 0,
       'image_field_caption' => 0,
       'max_filesize' => '10 MB',
       'max_resolution' => '3000x3000',
@@ -546,7 +548,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'wysiwyg_imagefield' => 1,
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_related_link'.
+  // Exported field_instance: 'node-uw_web_page-field_related_link'
   $field_instances['node-uw_web_page-field_related_link'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
@@ -626,7 +628,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_sidebar_content'.
+  // Exported field_instance: 'node-uw_web_page-field_sidebar_content'
   $field_instances['node-uw_web_page-field_sidebar_content'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => array(
@@ -740,7 +742,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_sidebar_note_content'.
+  // Exported field_instance: 'node-uw_web_page-field_sidebar_note_content'
   $field_instances['node-uw_web_page-field_sidebar_note_content'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -803,7 +805,7 @@ function uw_ct_web_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-uw_web_page-field_sidebar_note_content_links'.
+  // 'node-uw_web_page-field_sidebar_note_content_links'
   $field_instances['node-uw_web_page-field_sidebar_note_content_links'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -865,75 +867,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_wide'.
-  $field_instances['node-uw_web_page-field_wide'] = array(
-    'bundle' => 'uw_web_page',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => 'When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'embedded' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'entity_teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'forward' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_wide',
-    'label' => 'Wide Page Width',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-uw_web_page-title_field'.
+  // Exported field_instance: 'node-uw_web_page-title_field'
   $field_instances['node-uw_web_page-title_field'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
@@ -1002,8 +936,6 @@ function uw_ct_web_page_field_default_field_instances() {
   t('Note for wide web pages (links)');
   t('The social media listing page image allows the use of an alternative image for Twitter Cards or Open Graph (Facebook) posts.');
   t('Title');
-  t('When using wide pages, sidebar complementary content, sidebar related links, and any applicable promotional items will not be displayed.');
-  t('Wide Page Width');
 
   return $field_instances;
 }

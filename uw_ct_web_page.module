@@ -17,11 +17,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
   $langcode = $language->language;
   $sidebar = $form['#groups']['group_sidebar'];
 
-  // Hide field_wide if field_wide exists.
-  if (isset($form['field_wide'])) {
-    $form['field_wide']['#access'] = 0;
-  }
-
   // We expand the sidebar field group if any of its fields contain content.
   foreach ($sidebar->children as $field) {
     if (!empty($form[$field][$langcode][0]['#default_value'])) {
