@@ -94,6 +94,45 @@ function uw_ct_web_page_update_7103() {
   }
 }
 
+/**
+ * Delete field_wide from web page content type for existing responsive sites under pilots.
+ */
+function uw_ct_web_page_update_7104() {
+
+  $delete = FALSE;
+
+  // check if all data in field_data_field_wide have been copied into uw_page_settings_node table.
+  $nid_old = array();
+  if (db_table_exists('field_data_field_wide')) {
+    $result_from_field_wide = db_query("SELECT entity_id FROM {field_data_field_wide} WHERE field_wide_value = 1");
+    foreach ($result_from_field_wide as $record) {
+      $nid_old[] = $record->entity_id;
+    }
+  }
+
+  $nid_new = array();
+  if (db_table_exists('uw_page_settings_node')) {
+    $result_from_uw_page_settings_node = db_query("SELECT nid FROM {uw_page_settings_node} WHERE enable = 1 ORDER BY nid ASC");
+    foreach ($result_from_uw_page_settings_node as $record) {
+      $nid_new[] = $record->nid;
+    }
+  }
+
+  if (!empty($nid_old)) {
+    if (!empty($nid_new) && (array_intersect($nid_old, $nid_new) == $nid_old)) {
+      $delete = TRUE;
+    }
+  }
+  else {
+    $delete = TRUE;
+  }
+
+  $field_wide = field_info_instance('node', 'field_wide', 'uw_web_page');
+  if (!empty($field_wide) && $delete) {
+    field_delete_field('field_wide');
+    drupal_set_message(t('field_wide field has been successfully removed.'), 'warning');
+  }
+}
 
 /**
  * Implements hook_uninstall().
