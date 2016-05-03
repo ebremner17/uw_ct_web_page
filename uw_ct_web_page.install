@@ -95,7 +95,7 @@ function uw_ct_web_page_update_7103() {
 }
 
 /**
- * Delete field_wide from web page content type for existing responsive sites under pilots.
+ * Delete field_wide from web page content type for existing responsive sites.
  */
 function uw_ct_web_page_update_7104() {
 
