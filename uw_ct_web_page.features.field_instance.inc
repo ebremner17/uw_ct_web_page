@@ -10,7 +10,7 @@
 function uw_ct_web_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-uw_web_page-body'
+  // Exported field_instance: 'node-uw_web_page-body'.
   $field_instances['node-uw_web_page-body'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => array(
@@ -131,7 +131,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_audience'
+  // Exported field_instance: 'node-uw_web_page-field_audience'.
   $field_instances['node-uw_web_page-field_audience'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
@@ -203,7 +203,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_event_image'
+  // Exported field_instance: 'node-uw_web_page-field_event_image'.
   $field_instances['node-uw_web_page-field_event_image'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -247,6 +247,12 @@ function uw_ct_web_page_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'focal_point' => 0,
       'image_field_caption' => 0,
+      'image_field_caption_wrapper' => array(
+        'image_field_caption_default' => array(
+          'format' => 'plain_text',
+          'value' => '',
+        ),
+      ),
       'max_filesize' => '10 MB',
       'max_resolution' => '3000x3000',
       'min_resolution' => '50x50',
@@ -314,7 +320,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_file'
+  // Exported field_instance: 'node-uw_web_page-field_file'.
   $field_instances['node-uw_web_page-field_file'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -426,7 +432,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_image'
+  // Exported field_instance: 'node-uw_web_page-field_image'.
   $field_instances['node-uw_web_page-field_image'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -483,6 +489,12 @@ function uw_ct_web_page_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'focal_point' => 0,
       'image_field_caption' => 0,
+      'image_field_caption_wrapper' => array(
+        'image_field_caption_default' => array(
+          'format' => 'plain_text',
+          'value' => '',
+        ),
+      ),
       'max_filesize' => '10 MB',
       'max_resolution' => '3000x3000',
       'min_resolution' => '10x10',
@@ -548,7 +560,7 @@ function uw_ct_web_page_field_default_field_instances() {
     'wysiwyg_imagefield' => 1,
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_related_link'
+  // Exported field_instance: 'node-uw_web_page-field_related_link'.
   $field_instances['node-uw_web_page-field_related_link'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
@@ -628,7 +640,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_sidebar_content'
+  // Exported field_instance: 'node-uw_web_page-field_sidebar_content'.
   $field_instances['node-uw_web_page-field_sidebar_content'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => array(
@@ -742,7 +754,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-field_sidebar_note_content'
+  // Exported field_instance: 'node-uw_web_page-field_sidebar_note_content'.
   $field_instances['node-uw_web_page-field_sidebar_note_content'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -805,7 +817,7 @@ function uw_ct_web_page_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-uw_web_page-field_sidebar_note_content_links'
+  // 'node-uw_web_page-field_sidebar_note_content_links'.
   $field_instances['node-uw_web_page-field_sidebar_note_content_links'] = array(
     'bundle' => 'uw_web_page',
     'deleted' => 0,
@@ -867,7 +879,7 @@ function uw_ct_web_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-uw_web_page-title_field'
+  // Exported field_instance: 'node-uw_web_page-title_field'.
   $field_instances['node-uw_web_page-title_field'] = array(
     'bundle' => 'uw_web_page',
     'default_value' => NULL,
