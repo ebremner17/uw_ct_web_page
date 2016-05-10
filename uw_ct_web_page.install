@@ -130,7 +130,7 @@ function uw_ct_web_page_update_7104() {
   $field_wide = field_info_instance('node', 'field_wide', 'uw_web_page');
   if (!empty($field_wide) && $delete) {
     field_delete_field('field_wide');
-    drupal_set_message(t('field_wide field has been successfully removed.'), 'warning');
+    drupal_set_message(t('field_wide field has been successfully removed.'), 'status');
   }
 }
 
