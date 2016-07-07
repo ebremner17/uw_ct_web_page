@@ -87,11 +87,11 @@ function uw_ct_web_page_block_info() {
   // These blocks change depending on the page being viewed, so we cache per page (instead of the default per role).
   $blocks['uw_sidebar_block'] = array(
     'info' => t('uWaterloo Sidebar Content'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
+    'cache' => DRUPAL_CACHE_GLOBAL,
   );
   $blocks['uw_sidebar_related_links'] = array(
     'info' => t('uWaterloo Sidebar Related Links'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
+    'cache' => DRUPAL_CACHE_GLOBAL,
   );
   return $blocks;
 }
