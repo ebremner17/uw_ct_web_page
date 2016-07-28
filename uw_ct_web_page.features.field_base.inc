@@ -221,7 +221,7 @@ function uw_ct_web_page_field_default_field_bases() {
       ),
       'uri_scheme' => 'public',
     ),
-    'translatable' => 1,
+    'translatable' => 0,
     'type' => 'file',
   );
 
