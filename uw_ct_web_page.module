@@ -118,7 +118,7 @@ function uw_ct_web_page_block_view($delta = '') {
  *
  */
 function uw_ct_web_page_sidebar_content($field, $cols) {
-  if (arg(0) === 'node') {
+  if (arg(0) === 'node' && field_info_field($field)) {
     $params = array('nid' => intval(arg(1)));
 
     switch (arg(2)) {
