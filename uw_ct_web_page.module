@@ -44,14 +44,6 @@ function uw_ct_web_page_form_uw_web_page_node_form_alter(&$form, &$form_state, $
 
   // Load JavaScript to make wide pages handling cleaner.
   $form['#after_build'][] = 'uw_ct_web_page_wide_handler';
-
-  // Setting the default images for metatag twitter cards and open-graph.
-  // The node:field_image is an image within the node body and the
-  // node:field_event_image is the social media listing page image.
-  if (module_exists('metatag') && $form_id == 'uw_web_page_node_form') {
-    $form['metatags'][LANGUAGE_NONE]['open-graph']['og:image']['value']['#default_value'] = '[node:field_event_image],[node:field_image]';
-    $form['metatags'][LANGUAGE_NONE]['twitter-cards']['twitter:image:src']['value']['#default_value'] = '[node:field_event_image],[node:field_image]';
-  }
 }
 
 /**
