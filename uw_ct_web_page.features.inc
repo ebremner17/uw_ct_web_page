@@ -89,7 +89,7 @@ function uw_ct_web_page_image_default_styles() {
 function uw_ct_web_page_node_info() {
   $items = array(
     'uw_web_page' => array(
-      'name' => t('Web Page'),
+      'name' => t('Web page'),
       'base' => 'node_content',
       'description' => t('Web pages have main and sidebar content areas, as well as related links.'),
       'has_title' => '1',
