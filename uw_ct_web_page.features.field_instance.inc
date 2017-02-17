@@ -372,7 +372,7 @@ function uw_ct_web_page_field_default_field_instances() {
       'description_field' => 1,
       'entity_translation_sync' => FALSE,
       'file_directory' => 'uploads/files',
-      'file_extensions' => 'bib csv doc docx gz m mw mp3 rtf pdf pot potx pps ppt pptx psd r tar tex txt wav xls xlsx zip',
+      'file_extensions' => 'bib csv doc docx gz key m mw mp3 rtf pdf pot potx pps ppt pptx psd r tar tex txt wav xls xlsx zip',
       'max_filesize' => '25 MB',
       'user_register_form' => FALSE,
     ),
