@@ -153,8 +153,7 @@ function uw_ct_web_page_uninstall() {
  */
 function uw_ct_web_page_disable() {
   watchdog('uw_ct_web_page', 'disable function executing');
-  // Disable the content type.
-  db_update('node_type')->fields(array('disabled' => 1))->condition('type', 'uw_web_page', '=')->execute();
+
   // Disable the view.
   // Read in any existing disabled views.
   $views_status = variable_get('views_defaults', array());
@@ -176,8 +175,7 @@ function uw_ct_web_page_disable() {
  */
 function uw_ct_web_page_enable() {
   watchdog('uw_ct_web_page', 'enable function executing');
-  // Enable the content type.
-  db_update('node_type')->fields(array('disabled' => 0))->condition('type', 'uw_web_page', '=')->execute();
+
   // Enable the view.
   // Read in any existing disabled views.
   $views_status = variable_get('views_defaults', array());
