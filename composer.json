@@ -1,7 +1,7 @@
 {
     "name": "wcms/uw_ct_web_page",
     "description": "Provides simple web pages for UW sites.",
-    "type": "wcms-feature",
+    "type": "wcms-module",
     "homepage": "https://git.uwaterloo.ca/wcms/uw_ct_web_page",
     "authors": [
         {
