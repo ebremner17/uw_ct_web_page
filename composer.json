@@ -1,10 +1,7 @@
 {
     "name": "wcms/uw_ct_web_page",
     "description": "Provides simple web pages for UW sites.",
-    "type": "wcms-module",
+    "type": "drupal-custom-module",
     "license": "GPL-2.0+",
-    "minimum-stability": "dev",
-    "require": {
-        "composer/installers": "~1.0"
-    }
+    "minimum-stability": "dev"
 }
